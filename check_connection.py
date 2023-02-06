@@ -57,5 +57,6 @@ for host, result in results.items():
     else:
         print(f"Task succeeded on host {host}: {result.result}")
 
+
 print (failed_hosts)
-print ("This is an branch with Version1.2")
+
