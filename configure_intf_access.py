@@ -11,6 +11,7 @@ import json
 import sys
 import time
 
+
 def interface_access_config(task, config_file):
     r = task.run(task=netmiko_send_command, name="get parsed data from \"sh interface switchport\"", command_string="sh interfaces switchport", use_textfsm=True)
     host=str(task.host)
