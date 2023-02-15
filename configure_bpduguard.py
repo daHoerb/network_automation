@@ -93,4 +93,7 @@ for host, result in result_intf_bpduguard.items():
     else:
         print(f"Task succeeded on host {host}: {result.result}")
 
+print ("\n")
+print(f'{host}: The Task failed on the following Hosts:')
+print('--------------------------------------------')
 print (failed_hosts)
