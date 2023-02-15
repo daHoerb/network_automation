@@ -4,13 +4,9 @@ from nornir_napalm.plugins.tasks.napalm_configure import napalm_configure
 from nornir_netmiko import netmiko_send_command, netmiko_send_config
 from nornir_utils.plugins.functions import print_result
 from nornir.core.task import Task, Result
-from netmiko import ConnectHandler
-import csv
-import os
-import pprint
-import json
 import sys
 import time
+from deepdiff import DeepDiff
 
 
 def get_mac_address_access(task):
