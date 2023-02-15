@@ -1,0 +1,14 @@
+at-vie-sw25061:
+    hostname: at-vie-sw25061
+    port: 22
+    platform: ios
+
+at-vie-sw25079-1:
+    hostname: at-vie-sw25079-1
+    port: 22
+    platform: ios
+
+at-vie-sw25026:
+    hostname: at-vie-sw25026
+    port: 22
+    platform: ios

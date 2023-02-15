@@ -1,0 +1,8 @@
+host jump01-auva.nts.at
+  IdentityFile ~/.ssh/id_rsa    
+  IdentitiesOnly yes               
+  user hdinnobl
+  hostname jump01-auva.nts.at
+
+host * !jump01-auva.nts.at
+  ProxyCommand ssh hdinnobl@jump01-auva.nts.at nc %h %p
