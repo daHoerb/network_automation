@@ -10,7 +10,7 @@ import sys
 
 def check_connection(task):
     try:
-        r = task.run(netmiko_send_config, name='check connections to host', config_commands=["do show user"])
+        r = task.run(netmiko_send_config, name='check connections to host', config_commands=["do show version"])
         return f"{task.host} connection successful"
     except Exception as e:
         return f"{task.host} connection failed: {e}"
@@ -46,9 +46,8 @@ hosts = nr.inventory.hosts
 
 # try connection and login
 results = nr.run(task=check_connection)
-#print_result(result_connection)
+print (results)
 
-#print (result_connection)
 failed_hosts = []
 for host, result in results.items():
     if result.failed:
@@ -57,5 +56,8 @@ for host, result in results.items():
     else:
         print(f"Task succeeded on host {host}: {result.result}")
 
+
+print(f'{host}: The following Hosts are not able to connect:')
+print('--------------------------------------------')
 print (failed_hosts)
-print ("This is an branch with Version1.2")
+

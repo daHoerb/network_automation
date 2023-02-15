@@ -1,0 +1,327 @@
+2023-02-15 11:32:05,467 -  nornir.core -     INFO -        run() - Running task 'check_connection' with args {} on 2 hosts
+2023-02-15 11:32:15,497 - nornir.core.task -    ERROR -      start() - Host '172.20.80.5': task 'check connections to host' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\netmiko\base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\paramiko\client.py", line 358, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\paramiko\util.py", line 279, in retry_on_signal
+    return function()
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\paramiko\client.py", line 358, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\nornir_netmiko\tasks\netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\nornir_netmiko\connections\netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\netmiko\ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\netmiko\base_connection.py", line 439, in __init__
+    self._open()
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\netmiko\base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\netmiko\base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 172.20.80.5:22
+
+
+
+2023-02-15 11:32:15,497 - nornir.core.task -    ERROR -      start() - Host '172.20.80.4': task 'check connections to host' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\netmiko\base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\paramiko\client.py", line 358, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\paramiko\util.py", line 279, in retry_on_signal
+    return function()
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\paramiko\client.py", line 358, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\nornir_netmiko\tasks\netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\nornir_netmiko\connections\netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\netmiko\ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\netmiko\base_connection.py", line 439, in __init__
+    self._open()
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\netmiko\base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\netmiko\base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 172.20.80.4:22
+
+
+
+2023-02-15 11:33:24,734 -  nornir.core -     INFO -        run() - Running task 'check_connection' with args {} on 2 hosts
+2023-02-15 11:33:34,757 - nornir.core.task -    ERROR -      start() - Host '172.20.80.4': task 'check connections to host' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\netmiko\base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\paramiko\client.py", line 358, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\paramiko\util.py", line 279, in retry_on_signal
+    return function()
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\paramiko\client.py", line 358, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\nornir_netmiko\tasks\netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\nornir_netmiko\connections\netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\netmiko\ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\netmiko\base_connection.py", line 439, in __init__
+    self._open()
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\netmiko\base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\netmiko\base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 172.20.80.4:22
+
+
+
+2023-02-15 11:33:34,758 - nornir.core.task -    ERROR -      start() - Host '172.20.80.5': task 'check connections to host' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\netmiko\base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\paramiko\client.py", line 358, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\paramiko\util.py", line 279, in retry_on_signal
+    return function()
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\paramiko\client.py", line 358, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\nornir_netmiko\tasks\netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\nornir_netmiko\connections\netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\netmiko\ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\netmiko\base_connection.py", line 439, in __init__
+    self._open()
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\netmiko\base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\netmiko\base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 172.20.80.5:22
+
+
+
+2023-02-15 12:39:51,323 -  nornir.core -     INFO -        run() - Running task 'check_connection' with args {} on 2 hosts
+2023-02-15 12:40:02,967 - nornir.core.task -    ERROR -      start() - Host '172.20.80.4': task 'check connections to host' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\nornir_netmiko\tasks\netmiko_send_config.py", line 38, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\netmiko\base_connection.py", line 2206, in send_config_set
+    output += self.read_until_pattern(pattern=pattern, re_flags=re.M)
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\netmiko\base_connection.py", line 672, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: '(?:GRZ\\-LABOR\\-SW4.*$|#.*$)' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-02-15 12:40:03,805 - nornir.core.task -    ERROR -      start() - Host '172.20.80.5': task 'check connections to host' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\nornir_netmiko\tasks\netmiko_send_config.py", line 38, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\netmiko\base_connection.py", line 2206, in send_config_set
+    output += self.read_until_pattern(pattern=pattern, re_flags=re.M)
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\netmiko\base_connection.py", line 672, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: '(?:GRZ\\-LABOR\\-SW5.*$|#.*$)' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-02-15 12:41:40,790 -  nornir.core -     INFO -        run() - Running task 'check_connection' with args {} on 2 hosts
+2023-02-15 12:41:52,434 - nornir.core.task -    ERROR -      start() - Host '172.20.80.4': task 'check connections to host' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\nornir_netmiko\tasks\netmiko_send_config.py", line 38, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\netmiko\base_connection.py", line 2206, in send_config_set
+    output += self.read_until_pattern(pattern=pattern, re_flags=re.M)
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\netmiko\base_connection.py", line 672, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: '(?:GRZ\\-LABOR\\-SW4.*$|#.*$)' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-02-15 12:41:53,488 - nornir.core.task -    ERROR -      start() - Host '172.20.80.5': task 'check connections to host' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\nornir_netmiko\tasks\netmiko_send_config.py", line 38, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\netmiko\base_connection.py", line 2206, in send_config_set
+    output += self.read_until_pattern(pattern=pattern, re_flags=re.M)
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\netmiko\base_connection.py", line 672, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: '(?:GRZ\\-LABOR\\-SW5.*$|#.*$)' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-02-15 12:44:47,181 -  nornir.core -     INFO -        run() - Running task 'check_connection' with args {} on 2 hosts
+2023-02-15 12:44:58,797 - nornir.core.task -    ERROR -      start() - Host '172.20.80.4': task 'check connections to host' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\nornir_netmiko\tasks\netmiko_send_config.py", line 38, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\netmiko\base_connection.py", line 2206, in send_config_set
+    output += self.read_until_pattern(pattern=pattern, re_flags=re.M)
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\netmiko\base_connection.py", line 672, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: '(?:GRZ\\-LABOR\\-SW4.*$|#.*$)' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-02-15 12:44:59,661 - nornir.core.task -    ERROR -      start() - Host '172.20.80.5': task 'check connections to host' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\nornir_netmiko\tasks\netmiko_send_config.py", line 38, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\netmiko\base_connection.py", line 2206, in send_config_set
+    output += self.read_until_pattern(pattern=pattern, re_flags=re.M)
+  File "C:\Users\hdinnobl\AppData\Local\Programs\Python\Python38\lib\site-packages\netmiko\base_connection.py", line 672, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: '(?:GRZ\\-LABOR\\-SW5.*$|#.*$)' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-02-15 12:49:54,421 -  nornir.core -     INFO -        run() - Running task 'check_connection' with args {} on 2 hosts
+2023-02-15 12:51:49,453 -  nornir.core -     INFO -        run() - Running task 'check_connection' with args {} on 2 hosts
+2023-02-15 12:53:16,351 -  nornir.core -     INFO -        run() - Running task 'bpduguard_config' with args {} on 2 hosts
+2023-02-15 13:00:55,755 -  nornir.core -     INFO -        run() - Running task 'netmiko_save_config' with args {} on 2 hosts
+2023-02-15 13:01:50,457 -  nornir.core -     INFO -        run() - Running task 'netmiko_save_config' with args {} on 2 hosts
+2023-02-15 13:02:18,149 -  nornir.core -     INFO -        run() - Running task 'netmiko_save_config' with args {} on 2 hosts
+2023-02-15 13:14:03,228 -  nornir.core -     INFO -        run() - Running task 'interface_access_config' with args {'config_file': 'config/access_config.cfg'} on 2 hosts
+2023-02-15 14:02:58,690 -  nornir.core -     INFO -        run() - Running task 'interface_uplink_config' with args {'config_file': 'config/trunk_config.cfg'} on 2 hosts
