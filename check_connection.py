@@ -38,10 +38,11 @@ sys.stdout = Logger(path)
 nr = InitNornir(config_file="config.yaml")
 #hosts = nr.filter(dot1x="yes") # use only hosts where "data: dot1x: yes" is set in Host Inventory File!
 #filter = nr.filter(hostname="172.20.254.16")
+#nr = nr.filter(lambda host: "SWUKOG3" in host.name)
 #filtered_hosts = nr.filter(lambda h: h.name.startswith("sw") and h.site == "Wien")
 
 hosts = nr.inventory.hosts
-#print (hosts)
+print (hosts)
 
 
 # try connection and login
