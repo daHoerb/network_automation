@@ -15,19 +15,19 @@ import time
 def get_unauthenticated_ports(task):
     r = task.run(task=netmiko_send_command, command_string="show authentication sessions", use_textfsm=True)
     host=str(task.host)
-    unauthenticeted_intf_list = r.result
-    print (unauthenticeted_intf_list)
-    '''_
-    intf_shut = []
-    for intf_info in err_intf_list:
-        #if intf_info["status"] == "notconnect":
-        if intf_info["status"] == "err-disabled":
-            intf_shut.append(intf_info["port"])
-        
-    print(f'{host}: The following Interfaces are err-disabled:')
-    print('--------------------------------------------')
-    print(intf_shut)
-'''
+    intf_list = r.result
+
+    intf_unauth = []
+    for intf_info in intf_list:
+        if intf_info["status"] == "Unauth":
+            intf_unauth.append(intf_info["interface"])
+    
+    print (f'{host}: Thefollowing Interfaces are UNAUTHENTICATED:')
+    print ("---------------------------------------------------")
+    print (intf_unauth)
+    print ("")
+    return intf_unauth
+
 
 class Logger:
 
