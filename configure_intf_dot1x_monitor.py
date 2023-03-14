@@ -82,7 +82,7 @@ def dot1x_monitor_config(task):
     for intf_id in access_ports:
         intf_config = task.run(netmiko_send_config,name=(host +": Set Interface command for "+intf_id),config_commands=[
             "interface "+ intf_id,
-            "access-session port-control auto"]
+            "access-session closed"]
         )
         print_result(intf_config)
 
@@ -115,9 +115,11 @@ def dot1x_monitor_config(task):
         print ("Remove config from "+intf_id)
         intf_config = task.run(netmiko_send_config,name=(host +": Set Interface command for "+intf_id),config_commands=[
             "interface "+ intf_id,
-            "no access-session port-control auto"]
+            "no access-session closed"]
         )
         print_result(intf_config)
+
+    return intf_remove_config
 
 class Logger:
 
@@ -145,6 +147,7 @@ sys.stdout = Logger(path)
 nr = InitNornir(config_file="config.yaml")
 #hosts = nr.filter(dot1x="yes") # use only hosts where "data: dot1x: yes" is set in Host Inventory File!
 #nr = nr.filter(hostname="SWUSOG4VH12")
+nr = nr.filter(lambda host: "SWLSUG" in host.name)
 hosts = nr.inventory.hosts
 print (hosts)
 
@@ -161,7 +164,7 @@ for host, result in result_intf_dot1x_monitor.items():
         print(f"Task succeeded on host {host}: {result.result}")
 
 print ("\n")
-print(f'{host}: The Task failed on the following Hosts:')
+print('The Task failed on the following Hosts:')
 print('--------------------------------------------')
 print (failed_hosts)
 
