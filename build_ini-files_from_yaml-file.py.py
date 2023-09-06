@@ -13,10 +13,11 @@ for host in hosts:
 
 # Definiere die Dateien, die kopiert werden sollen
 #source_file = "C:\\Users\\hdinnobl\\Desktop\\SecureCRT\\Config\\Sessions\\AUVA\\UK\\SWUK0001.ini"
-source_file = "C:/Users/hdinnobl/Desktop/SecureCRT/Config/Sessions/AUVA/UK/SWUK0001.INI"
+host_copy = "SWRW0001"
+source_file = f"/Users/hdinnobl/Library/Application Support/VanDyke/SecureCRT/Config/Sessions/AUVA/RW/{host_copy}.ini"
 
 for host in hosts:
-    destination_file = f"C:/Users/hdinnobl/Desktop/SecureCRT/Config/Sessions/AUVA/UK/{host}.ini"
+    destination_file = f"/Users/hdinnobl/Library/Application Support/VanDyke/SecureCRT/Config/Sessions/AUVA/RW/{host}.ini"
     print (destination_file)
     
     # Kopiere die Datei von der Quelle zum Ziel
@@ -30,7 +31,7 @@ for host in hosts:
         # Ersetze bestimmte Stellen im Inhalt mit neuen Variablen
         #hostname_ip = "10.208.60.1"
         
-        content = content.replace("10.208.60.1", host)
+        content = content.replace(host_copy, host)
 
         # Setze den Dateizeiger an den Anfang der Datei
         file.seek(0)

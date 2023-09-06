@@ -48,11 +48,14 @@ class Logger:
 #==============================================================================  
 
 # write output stream to file
-path = 'configure_bpduguard_output.txt'
+path = './Logs/get_unauthenticated_ports_output.txt'
 sys.stdout = Logger(path)
 
 # init Nornir Object
 nr = InitNornir(config_file="config.yaml")
+#hosts = nr.filter(dot1x="yes") # use only hosts where "data: dot1x: yes" is set in Host Inventory File!
+#nr = nr.filter(hostname="SWUSOG4VH12")
+#nr = nr.filter(lambda host: "SWRTOG5" in host.name)
 
 hosts = nr.inventory.hosts
 for host in hosts:

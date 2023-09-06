@@ -2,7 +2,7 @@ from nornir import InitNornir
 from nornir_napalm.plugins.tasks import napalm_get
 from nornir_napalm.plugins.tasks.napalm_configure import napalm_configure
 #from nornir_netmiko.tasks import netmiko_send_config
-from nornir_netmiko import netmiko_send_command, netmiko_send_config, netmiko_save_config
+from nornir_netmiko import netmiko_send_command, netmiko_send_config, netmiko_save_config, netmiko_multiline
 from ttp import ttp
 #from nornir.plugins.tasks import commands
 from nornir_utils.plugins.functions import print_result
@@ -22,10 +22,13 @@ import time
 
 def global_config(task, config):
 
-    r = task.run(netmiko_send_config, name='Set Global Config via Configfile', config_file=config, read_timeout=0)
+    r = task.run(netmiko_send_config, name='Set Global Config via Configfile', config_file=config, read_timeout=10)
     print_result(r)
 
+def global_command(task, config):
 
+    r = task.run(netmiko_send_command, name='Send command', command_string = "clear authentication sessions")
+    print_result(r)
 
 class Logger:
 
@@ -46,18 +49,19 @@ class Logger:
 #==============================================================================  
 
 # write output stream to file
-path = 'output.txt'
+path = './Logs/global_config.txt'
 sys.stdout = Logger(path)
 
 # init Nornir Object
 nr = InitNornir(config_file="config.yaml")
 #hosts = nr.filter(dot1x="yes") # use only hosts where "data: dot1x: yes" is set in Host Inventory File!
-#nr = nr.filter(hostname="172.20.254.117")
-#filtered_hosts = nr.filter(lambda h: h.name.startswith("sw") and h.site == "Wien")
+#nr = nr.filter(hostname="10.108.240.48")
+#filtered_hosts = nr.filter(lambda h: h.name.startswith("SWRWLT011") and h.site == "Wien")
+nr = nr.filter(lambda host: "SWRHAEG11" in host.name)
 
 
 # define the confing file which will be applied
-results_global = nr.run(task=global_config, config="config/vty_config.cfg")
+results_global = nr.run(task=global_config, config="config/AP_CONNECTED.cfg")
 print_result(results_global)
 
 

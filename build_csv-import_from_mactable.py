@@ -1,19 +1,32 @@
 from nornir import InitNornir
 from nornir_napalm.plugins.tasks import napalm_get
 import csv
+import yaml
+import json
 
 
+def load_yaml(file_path):
+    with open(file_path, 'r') as file:
+        try:
+            data = yaml.safe_load(file)
+            return data
+        except yaml.YAMLError as e:
+            print(f"Fehler beim Laden der YAML-Datei: {e}")
+            return None
 
 myMAC = []
 
+# Define the correct Core Switch
+coreswitch = "SWRH0001"
+
 nr = InitNornir(config_file="config.yaml")
-nr = nr.filter(name="SWUS0001")
+nr = nr.filter(name=coreswitch)
 result = nr.run(
     task=napalm_get,
     getters=["mac_address_table"]
 )
 # get mac table from Core Router
-mac_table = result["SWUS0001"][0].result["mac_address_table"]
+mac_table = result[coreswitch][0].result["mac_address_table"]
 
 
 # create dict from mac table
@@ -24,8 +37,8 @@ for mac_info in mac_table:
         mac_table_list.append({"mac": mac_info["mac"], "vlan" : mac_info["vlan"]})
         print (mac_info)
 
-# create dict for mab identy groups
-vlan_2_identy_group={
+# create dict for mab identy groups in LS
+vlan_2_identy_group_LS={
     158: "MAB_LS-US-MT",
     905: "MAB_LS-US_ADSL2",
     903: "MAB_LS-US_ADSL_Service",
@@ -48,6 +61,34 @@ vlan_2_identy_group={
     970: "MAB_LS_US_Pat_IP_TV"
 }
 
+vlan_2_identy_group_RT={
+    46: "MAB_RT_PKE",
+    47: "MAB_RT_GINA",
+    50: "MAB_RT_Zeiterfassung",
+    52: "MAB_RT_TK",
+    126: "MAB_TK_Videoaufruf",
+    127: "MAB_RT_Datacash",
+    148: "MAB_RT_PKE_alt",
+    200: "MAB_TK_PRIMA",
+    242: "MAB_RT_Drucker",
+    247: "MAB_RT_Phone",
+    253: "MAB_RT_DosisMes",
+    254: "MAB_RT_MT",
+    255: "MAB_RT_ALOM",
+    902: "MAB_RT_LUFU",
+    905: "MAB_RT_IAC-BOX_TA",
+    970: "MAB_RT_PAT_IP_TV",
+    980: "MAB_RT_Lichtruf"
+}
+
+# Laden der Identy Groups aus einem yaml file
+file_path = 'IdentyGroups/RH_IdentyGroups.yaml'  # Passe den Dateipfad entsprechend an
+data = load_yaml(file_path)
+if data is None:
+    print(json.dumps(data, indent=3))
+    print ("File exist Error")
+else:
+    print (f'Loading {file_path} succesful')
 
 
 
@@ -61,10 +102,14 @@ with open('import_mab.csv', mode='w', newline='') as csv_file:
         row = {}
         row["MACAddress"] = mac_info["mac"]
         print (mac_info["vlan"])
-        if not mac_info["vlan"] in vlan_2_identy_group:
+        if not mac_info["vlan"] in data or mac_info["vlan"] == None:
             print ("Key not found")
             continue
-        row["IdentityGroup"] = vlan_2_identy_group[mac_info["vlan"]]
+
+        if data[mac_info["vlan"]]["identy_group"] == None:
+            print ("Identy Group not found")
+            continue
+        row["IdentityGroup"] = data[mac_info["vlan"]]["identy_group"]
         print (row)
         #print ("end of raw")
         writer.writerow(row)

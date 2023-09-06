@@ -53,7 +53,7 @@ def get_access_ports(task):
     
     return Result(task.host, intf_list)
     
-def dot1x_monitor_config(task):
+def dot1x_closed_config(task):
 
 
     #get mac table for access ports before configuration
@@ -82,11 +82,11 @@ def dot1x_monitor_config(task):
     for intf_id in access_ports:
         intf_config = task.run(netmiko_send_config,name=(host +": Set Interface command for "+intf_id),config_commands=[
             "interface "+ intf_id,
-            "access-session port-control auto"]
+            "access-session closed"]
         )
-        print_result(intf_config)
+        #print_result(intf_config)
 
-    time.sleep(30)
+    time.sleep(3)
 
     # get mac table for access ports after configuarion
     t = task.run(task=get_mac_address_access)
@@ -119,7 +119,7 @@ def dot1x_monitor_config(task):
             "no access-session port-control auto"]
         )
         print_result(intf_config)
-    '''
+        '''
 
     return intf_remove_config
 
@@ -142,7 +142,7 @@ class Logger:
 #==============================================================================  
 
 # write output stream to file
-path = './Logs/int_dot1x_monitor_output.txt'
+path = './Logs/configure_intf_dot1x_closed_output.txt'
 sys.stdout = Logger(path)
 
 # init Nornir Object
@@ -154,7 +154,7 @@ hosts = nr.inventory.hosts
 print (hosts)
 
 
-result_intf_dot1x_monitor = nr.run(task=dot1x_monitor_config)
+result_intf_dot1x_monitor = nr.run(task=dot1x_closed_config)
 print_result(result_intf_dot1x_monitor)
 
 failed_hosts = []

@@ -1,6 +1,6 @@
 import csv
 
-import_file = "2023-01-31_profiler_endpoints.csv"
+import_file = "profiler_endpoints.csv"
 dict = []
 
 with open(import_file, mode='r') as csv_file:
@@ -25,7 +25,7 @@ with open(import_file, mode='r') as csv_file:
 #print (csv_reader.fieldnames)
 
 
-with open('2023-01-23_converted_profiler_endpoints.csv', mode='w', newline='') as csv_file:
+with open('2023-06-27_converted_profiler_endpoints.csv', mode='w', newline='') as csv_file:
     fieldnames = ['MACAddress', 'ip', 'NAS-IP-Address', 'NAS-Port-Id', 'OUI', 'FailureReason']
     writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
 
