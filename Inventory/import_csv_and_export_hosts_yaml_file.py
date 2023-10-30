@@ -2,8 +2,11 @@ import csv
 import yaml
 import json
 
+
+
+
 # Öffnen Sie die CSV-Datei
-with open('Devices_SW_AT-VIE.csv', 'r') as f:
+with open('hosts_US.csv', 'r') as f:
     reader = csv.reader(f)
     data = [row for row in reader]
 
@@ -25,5 +28,5 @@ for row in data[1:]:
 
 #print ((hosts))
 # Konvertieren Sie die Liste in ein YAML-Format und speichern Sie es in einer Datei
-with open('hosts_Devices_SW_AT-VIE.yaml', 'w') as f:
+with open('hosts_US.yaml', 'w') as f:
     yaml.dump(hosts, f)

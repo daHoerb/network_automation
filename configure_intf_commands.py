@@ -62,7 +62,7 @@ def dot1x_monitor_config(task):
     mac_address_dict_before = r.result
 
     host=str(task.host)
-    print ("Processing "+host+" for dot1x")
+    print ("Processing "+host+" for Configuration")
   
     #get access port list
     s =task.run(task=get_access_ports)
@@ -72,16 +72,22 @@ def dot1x_monitor_config(task):
     print(f'{host}: The following Access Interfaces will be configured:')
     print('--------------------------------------------')
     print(access_ports)
-
+    '''
+    eingabe = ''
+    while (eingabe != "y"):
+        eingabe = input(host+": do you want to configure ports (y/n): [y] ")
+        if eingabe == "n":
+            exit("TERMINATE SCRIPT")
+    '''
     # configure interfaces
     for intf_id in access_ports:
         intf_config = task.run(netmiko_send_config,name=(host +": Set Interface command for "+intf_id),config_commands=[
             "interface "+ intf_id,
-            "access-session port-control auto"]
+            "switchport voice vlan 148"]
         )
         print_result(intf_config)
 
-    time.sleep(30)
+    time.sleep(70)
 
     # get mac table for access ports after configuarion
     t = task.run(task=get_mac_address_access)
@@ -106,15 +112,13 @@ def dot1x_monitor_config(task):
             
         
     # remove configure interfaces
-    '''
     for intf_id in intf_remove_config:
         print ("Remove config from "+intf_id)
         intf_config = task.run(netmiko_send_config,name=(host +": Set Interface command for "+intf_id),config_commands=[
             "interface "+ intf_id,
-            "no access-session port-control auto"]
+            "no switchport voice vlan 148"]
         )
         print_result(intf_config)
-    '''
 
     return intf_remove_config
 
@@ -144,23 +148,24 @@ def update_config_yaml(path_inventory_file):
     with open("config.yaml", "w") as config_file:
         yaml.dump(config_data, config_file, default_flow_style=False)
 
+
 #==============================================================================
 # ---- Main: Run Commands
 #==============================================================================  
 
 # write output stream to file
-path = './Logs/int_dot1x_monitor_output.txt'
+path = './Logs/configure_intf_commands_output.txt'
 sys.stdout = Logger(path)
 
 # Pfad zum Inventory File
-path_inventory_file = 'Inventory/hosts_UM.yaml'  # Passe den Dateipfad entsprechend an
+path_inventory_file = 'Inventory/hosts_RH.yaml'  # Passe den Dateipfad entsprechend an
 update_config_yaml(path_inventory_file)
 
 # init Nornir Object
 nr = InitNornir(config_file="config.yaml")
 #hosts = nr.filter(dot1x="yes") # use only hosts where "data: dot1x: yes" is set in Host Inventory File!
 #nr = nr.filter(hostname="SWUSOG4VH12")
-nr = nr.filter(lambda host: "111" in host.name)
+#nr = nr.filter(lambda host: "SWUSEGVH22" in host.name)
 hosts = nr.inventory.hosts
 print (hosts)
 

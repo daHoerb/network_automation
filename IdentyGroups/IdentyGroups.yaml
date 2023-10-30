@@ -1,0 +1,5 @@
+53: 
+    vlan_name: Zutritt
+    identy_group: MAB_RH_Zutritt
+    authorization_profile: Zutritt
+

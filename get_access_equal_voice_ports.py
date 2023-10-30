@@ -1,35 +1,39 @@
 from nornir import InitNornir
 from nornir_napalm.plugins.tasks import napalm_get
 from nornir_napalm.plugins.tasks.napalm_configure import napalm_configure
-#from nornir_netmiko.tasks import netmiko_send_config
-from nornir_netmiko import netmiko_send_command, netmiko_send_config, netmiko_save_config, netmiko_multiline
-from ttp import ttp
-#from nornir.plugins.tasks import commands
+from nornir_netmiko import netmiko_send_command, netmiko_send_config
 from nornir_utils.plugins.functions import print_result
-#from nornir.plugins.functions.text import print_result
-#from nornir.plugins.tasks.networking import napalm_get
-#from nornir.plugins.tasks.networking import netmiko_send_command
-#from nornir.plugins.tasks.networking.netmiko_send_config import netmiko_send_config
 from nornir.core.task import Task, Result
-from netmiko import ConnectHandler
-import csv
-import os
-import pprint
-import json
 import sys
-import time
 import yaml
 
 
-def global_config(task, config):
 
-    r = task.run(netmiko_send_config, name='Set Global Config via Configfile', config_file=config, read_timeout=10)
-    print_result(r)
+def get_access_equal_voice_ports(task, voice_vlanid):
+    r = task.run(task=netmiko_send_command, name="get parsed data from \"sh interface switchport\"", command_string="sh interfaces switchport", use_textfsm=True)
+    host=str(task.host)
+    intf_dict = r.result
 
-def global_command(task, command):
+    # get access equal voice ports
+    intf_list = []
+    for intf_info in intf_dict:
+        #print (intf_info)
+        #print (type(intf_info['access_vlan']))
+        if intf_info['access_vlan'] == "unassigned":
+            continue
+        if intf_info['voice_vlan'] == "none":
+            print (f"{host}: Interface with no voice vlan: {intf_info['interface']}")
+            continue
+        if int(intf_info['voice_vlan']) != voice_vlanid:
+            print (f"{host}: Interface with other defualt voice vlan {int(intf_info['voice_vlan'])}: {intf_info['interface']}")
 
-    r = task.run(netmiko_send_command, name='Send command', command_string = command)
-    print_result(r)
+        if int(intf_info['access_vlan']) == voice_vlanid: #and intf_info["mode"] != "down":
+            intf_list.append(intf_info["interface"])
+            print (f"{host}: Interface with equal access/voice vlan 101: {intf_info['interface']}")
+    
+    return Result(task.host, intf_list)
+    
+
 
 class Logger:
 
@@ -62,29 +66,31 @@ def update_config_yaml(path_inventory_file):
 #==============================================================================  
 
 # write output stream to file
-path = './Logs/global_config.txt'
+path = './Logs/get_access_equal_voice_ports.txt'
 sys.stdout = Logger(path)
+
+# Define Voice Vlanid
+voice_vlanid = 101
 
 # Pfad zum Inventory File
 path_inventory_file = 'Inventory/hosts_UM.yaml'  # Passe den Dateipfad entsprechend an
 update_config_yaml(path_inventory_file)
+
+
 # init Nornir Object
 nr = InitNornir(config_file="config.yaml")
 #hosts = nr.filter(dot1x="yes") # use only hosts where "data: dot1x: yes" is set in Host Inventory File!
-#nr = nr.filter(hostname="10.108.240.48")
-#filtered_hosts = nr.filter(lambda h: h.name.startswith("SWRWLT011") and h.site == "Wien")
-#nr = nr.filter(lambda host: "SWUSEGVH13" in host.name)
+#nr = nr.filter(hostname="SWUSOG4VH12")
+#nr = nr.filter(lambda host: "EGVH13" in host.name)
+hosts = nr.inventory.hosts
+print (hosts)
 
 
-# define the confing file which will be applied
-command = "clear authentication session"
-results_global = nr.run(task=global_command, command=command)
-#results_global = nr.run(task=global_config, config="config/PSN3.cfg")
-print_result(results_global)
-
+result_get_access_equal_voice_ports = nr.run(task=get_access_equal_voice_ports, voice_vlanid=voice_vlanid)
+#print_result(result_get_access_equal_voice_ports)
 
 failed_hosts = []
-for host, result in results_global.items():
+for host, result in result_get_access_equal_voice_ports.items():
     if result.failed:
         print(f"Task failed on host {host}: {result}")
         failed_hosts.append(host)

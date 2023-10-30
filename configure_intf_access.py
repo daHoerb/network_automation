@@ -5,6 +5,7 @@ from nornir_netmiko import netmiko_send_command, netmiko_send_config, netmiko_sa
 from nornir_utils.plugins.functions import print_result
 from nornir.core.task import Task, Result
 import sys
+import yaml
 
 
 def interface_access_config(task, config_file):
@@ -86,6 +87,18 @@ class Logger:
         self.console.flush()
         self.file.flush()
 
+def update_config_yaml(path_inventory_file):
+    # Lade die vorhandene config.yaml-Datei
+    with open("config.yaml", "r") as config_file:
+        config_data = yaml.safe_load(config_file)
+
+    # Aktualisiere den Pfad zur hosts.yaml-Datei
+    config_data["inventory"]["options"]["host_file"] = path_inventory_file
+
+    # Schreibe die aktualisierte Konfiguration zurück in die config.yaml-Datei
+    with open("config.yaml", "w") as config_file:
+        yaml.dump(config_data, config_file, default_flow_style=False)
+
 #==============================================================================
 # ---- Main: Run Commands
 #==============================================================================  
@@ -94,10 +107,14 @@ class Logger:
 path = './Logs/access_config_output.txt'
 sys.stdout = Logger(path)
 
+# Pfad zum Inventory File
+path_inventory_file = 'Inventory/hosts_UM.yaml'  # Passe den Dateipfad entsprechend an
+update_config_yaml(path_inventory_file)
+
 # init Nornir Object
 nr = InitNornir(config_file="config.yaml")
 #hosts = nr.filter(dot1x="yes") # use only hosts where "data: dot1x: yes" is set in Host Inventory File!
-nr = nr.filter(lambda host: "RHW" in host.name)
+#nr = nr.filter(lambda host: "EGVH12" in host.name)
 #filtered_hosts = nr.filter(lambda h: h.name.startswith("sw") and h.site == "Wien")
 
 hosts = nr.inventory.hosts
@@ -105,7 +122,7 @@ for host in hosts:
     print (host)
 
 
-results_intf_access = nr.run(task=interface_access_config, config_file="config/access_config.cfg")
+results_intf_access = nr.run(task=interface_access_config, config_file="config/voice_vlan.cfg")
 print_result(results_intf_access)
 
 

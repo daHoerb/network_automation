@@ -5,8 +5,6 @@ from nornir_netmiko import netmiko_send_command, netmiko_send_config
 from nornir_utils.plugins.functions import print_result
 from nornir.core.task import Task, Result
 import sys
-import time
-from deepdiff import DeepDiff
 import yaml
 
 
@@ -54,69 +52,64 @@ def get_access_ports(task):
     
     return Result(task.host, intf_list)
     
-def dot1x_monitor_config(task):
+def get_miniswitch(task):
 
 
     #get mac table for access ports before configuration
     r = task.run(task=get_mac_address_access)
-    mac_address_dict_before = r.result
+    mac_address_dict = r.result
 
     host=str(task.host)
-    print ("Processing "+host+" for dot1x")
+    print ("Processing "+host+":")
   
     #get access port list
     s =task.run(task=get_access_ports)
     #print (s.result)
     access_ports = s.result
 
-    print(f'{host}: The following Access Interfaces will be configured:')
-    print('--------------------------------------------')
-    print(access_ports)
+    # Count of MACs on Access Interface
+    counter = 0
+    intf_count = {}
+    intf2vlanid_dict = {}
 
-    # configure interfaces
-    for intf_id in access_ports:
-        intf_config = task.run(netmiko_send_config,name=(host +": Set Interface command for "+intf_id),config_commands=[
-            "interface "+ intf_id,
-            "access-session port-control auto"]
-        )
-        print_result(intf_config)
+    for mac, intf_info in mac_address_dict.items():
 
-    time.sleep(30)
-
-    # get mac table for access ports after configuarion
-    t = task.run(task=get_mac_address_access)
-    mac_address_dict_after = t.result
-
-    # check missing mac addresses
-    print ("*"*100)
-    ddiff = DeepDiff(mac_address_dict_before, mac_address_dict_after, verbose_level=2)
-    print(ddiff)
-    print ("-"*100)
-    
-    # get interfaces from missing mac addresses
-    intf_remove_config = []
-    if bool(ddiff) is True:
-        for items in ddiff["dictionary_item_removed"].items():
-            interface = items[1][0]["interface"]
-            intf_remove_config.append(items[1][0]["interface"])
-            print (f"{host}: WARNING! missing MAC on {interface}")
-    else:
-        print ("all MAC Addresses found")    
-    
-            
+        # if voice vlan the continue
+        end = False
+        for id in voice_vlanid:
+            if intf_info[1]['vlan'] == id:
+                #print (f"Found MAC in Restricted Vlan: Interface: {intf_info[0]['interface']} vlanid: {intf_info[1]['vlan']}")
+                end = True
+                break
+        if end == True:
+            continue
         
-    # remove configure interfaces
-    '''
-    for intf_id in intf_remove_config:
-        print ("Remove config from "+intf_id)
-        intf_config = task.run(netmiko_send_config,name=(host +": Set Interface command for "+intf_id),config_commands=[
-            "interface "+ intf_id,
-            "no access-session port-control auto"]
-        )
-        print_result(intf_config)
-    '''
 
-    return intf_remove_config
+        intf = (intf_info[0]['interface'])
+        #update = {"interface": counter+1}
+        intf_vlanid = (intf_info[1]['vlan'])
+        intf2vlanid_dict.update({intf: intf_vlanid})
+        
+        if intf not in intf_count:
+            intf_count.update({intf: 1})
+
+        else:
+            intf_count[intf] = intf_count[intf]+1
+
+
+    # Sortieren der Interface-Einträge
+    intf_count = dict(sorted(intf_count.items()))
+
+
+    # Print Interfaces with more than 1 MAC
+    intf_fail = []
+    for intf in intf_count:
+        if intf_count[intf] > 1:
+            print (f"WARNING!!! {host}: {intf} has {intf_count[intf]} MAC Addresses. Vlan ID: {intf2vlanid_dict[intf]}")
+            intf_fail.append(intf)
+
+    return intf_fail
+
 
 class Logger:
 
@@ -149,27 +142,31 @@ def update_config_yaml(path_inventory_file):
 #==============================================================================  
 
 # write output stream to file
-path = './Logs/int_dot1x_monitor_output.txt'
+path = './Logs/get_miniswitch.txt'
 sys.stdout = Logger(path)
+
+# Define Voice Vlanid
+voice_vlanid = [101,104,980]
 
 # Pfad zum Inventory File
 path_inventory_file = 'Inventory/hosts_UM.yaml'  # Passe den Dateipfad entsprechend an
 update_config_yaml(path_inventory_file)
 
+
 # init Nornir Object
 nr = InitNornir(config_file="config.yaml")
 #hosts = nr.filter(dot1x="yes") # use only hosts where "data: dot1x: yes" is set in Host Inventory File!
 #nr = nr.filter(hostname="SWUSOG4VH12")
-nr = nr.filter(lambda host: "111" in host.name)
+#nr = nr.filter(lambda host: "EGVH11" in host.name)
 hosts = nr.inventory.hosts
 print (hosts)
 
 
-result_intf_dot1x_monitor = nr.run(task=dot1x_monitor_config)
-print_result(result_intf_dot1x_monitor)
+result_get_miniswitch = nr.run(task=get_miniswitch)
+#print_result(result_get_miniswitch)
 
 failed_hosts = []
-for host, result in result_intf_dot1x_monitor.items():
+for host, result in result_get_miniswitch.items():
     if result.failed:
         print(f"Task failed on host {host}: {result}")
         failed_hosts.append(host)

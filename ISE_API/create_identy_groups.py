@@ -1,6 +1,7 @@
 import yaml
 import json
 import requests
+from decouple import config
 
 
 def load_yaml(file_path):
@@ -34,6 +35,9 @@ def get_identity_groups(api_base_url, username, password):
         'https': f'http://{proxy_username}:{proxy_password}@{proxy_host}:{proxy_port}'
     } 
 
+    print (proxies)
+    print (proxy_port)
+#        'http': f'http://{proxy_username}:{proxy_password}@{proxy_host}:{proxy_port}',
     try:
 
         identity_groups = []
@@ -220,7 +224,7 @@ def pushAuthenticationProfiles(api_base_url, name, description, vlan_id, voicedo
 #==============================================================================  
 
 # Laden der Identy Groups auseinem yaml file
-file_path = '../IdentyGroups/RH_IdentyGroups.yaml'  # Passe den Dateipfad entsprechend an
+file_path = '../IdentyGroups/UM_IdentyGroups.yaml'  # Passe den Dateipfad entsprechend an
 data = load_yaml(file_path)
 if data is None:
     print(json.dumps(data, indent=3))
@@ -229,9 +233,18 @@ else:
     print (f'Loading {file_path} succesful')
 
 #print (data.items())
+# Hole Werte aus der dotenv
+api_base_url = config("api_base_url")
+username = config("username")
+password = config("password")
+proxy_host = config("proxy_host")
+proxy_port =config("proxy_port")
+proxy_username = config("proxy_username")
+proxy_password = config("proxy_password")
 
 
-# Beispielaufruf
+# Beispielaufruf 
+'''
 api_base_url = 'https://10.208.81.202:9060'  # Passe die API-Basis-URL entsprechend an
 username = 'nts_hed'  # Passe den Benutzernamen entsprechend an
 password = 'A0Ae18oUHO'  # Passe das Passwort entsprechend an
@@ -239,11 +252,10 @@ proxy_host = 'localhost'  # Passe den Proxy-Host entsprechend an
 proxy_port = '60081'  # Passe den Proxy-Port entsprechend an
 proxy_username = 'hdinnobl'  # Passe den Proxy-Benutzernamen entsprechend an
 proxy_password = 'Om8)-Xj9UZ%w'  # Passe das Proxy-Passwort entsprechend an
-
+'''
 print ("Processing...   ISE DATEN WERDEN ABGEFRAGT:")
 identity_groups = get_identity_groups(api_base_url, username, password)
 authentication_profiles = get_authentication_profiles(api_base_url)
-
 
 
 # Neue Liste erstellen erstellen

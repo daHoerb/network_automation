@@ -6,6 +6,7 @@ from nornir_utils.plugins.functions import print_result
 from nornir.core.task import Task, Result
 import sys
 import time
+import yaml
 
 
 def check_err_disabled_ports(task):
@@ -75,6 +76,17 @@ def stormcontrol_config(task):
         )
         print_result(intf_config)
 
+def update_config_yaml(path_inventory_file):
+    # Lade die vorhandene config.yaml-Datei
+    with open("config.yaml", "r") as config_file:
+        config_data = yaml.safe_load(config_file)
+
+    # Aktualisiere den Pfad zur hosts.yaml-Datei
+    config_data["inventory"]["options"]["host_file"] = path_inventory_file
+
+    # Schreibe die aktualisierte Konfiguration zurück in die config.yaml-Datei
+    with open("config.yaml", "w") as config_file:
+        yaml.dump(config_data, config_file, default_flow_style=False)
 
 class Logger:
 
@@ -95,8 +107,12 @@ class Logger:
 #==============================================================================  
 
 # write output stream to file
-path = 'configure_bpduguard_output.txt'
+path = './Logs/intf_stormcontrol_output.txt'
 sys.stdout = Logger(path)
+
+# Pfad zum Inventory File
+path_inventory_file = 'Inventory/hosts_RH.yaml'  # Passe den Dateipfad entsprechend an
+update_config_yaml(path_inventory_file)
 
 # init Nornir Object
 nr = InitNornir(config_file="config.yaml")

@@ -2,7 +2,7 @@ inventory:
   options:
     defaults_file: Inventory/defaults.yaml
     group_file: Inventory/groups.yaml
-    host_file: ../Inventory/hosts_US.yaml
+    host_file: /Users/hdinnobl/venv/AUVA/network_automation/Inventory/hosts_US.yaml
   plugin: SimpleInventory
 options:
   num_workers: 5
