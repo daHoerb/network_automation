@@ -1,0 +1,184 @@
+SWRTEGN011:
+  hostname: 10.108.240.34
+  platform: ios
+  port: 22
+SWRTEGN012:
+  hostname: 10.108.240.35
+  platform: ios
+  port: 22
+SWRTEGN013:
+  hostname: 10.108.240.48
+  platform: ios
+  port: 22
+SWRTEGN014:
+  hostname: 10.108.240.59
+  platform: ios
+  port: 22
+SWRTEGN021:
+  hostname: 10.108.240.33
+  platform: ios
+  port: 22
+SWRTEGN023:
+  hostname: 10.108.240.49
+  platform: ios
+  port: 22
+SWRTEGN191:
+  hostname: 10.108.240.28
+  platform: ios
+  port: 22
+SWRTEGN192:
+  hostname: 10.108.240.31
+  platform: ios
+  port: 22
+SWRTOG1N031:
+  hostname: 10.108.240.29
+  platform: ios
+  port: 22
+SWRTOG1N034:
+  hostname: 10.108.240.57
+  platform: ios
+  port: 22
+SWRTOG1N041:
+  hostname: 10.108.240.27
+  platform: ios
+  port: 22
+SWRTOG1N043:
+  hostname: 10.108.240.56
+  platform: ios
+  port: 22
+SWRTOG1N052:
+  hostname: 10.108.240.55
+  platform: ios
+  port: 22
+SWRTOG1N061:
+  hostname: 10.108.240.25
+  platform: ios
+  port: 22
+SWRTOG1N062:
+  hostname: 10.108.240.54
+  platform: ios
+  port: 22
+SWRTOG1N171:
+  hostname: 10.108.240.26
+  platform: ios
+  port: 22
+SWRTOG1N181:
+  hostname: 10.108.240.30
+  platform: ios
+  port: 22
+SWRTOG1N182:
+  hostname: 10.108.240.32
+  platform: ios
+  port: 22
+SWRTOG1N201:
+  hostname: 10.108.240.36
+  platform: ios
+  port: 22
+SWRTOG2N071:
+  hostname: 10.108.240.23
+  platform: ios
+  port: 22
+SWRTOG2N072:
+  hostname: 10.108.240.24
+  platform: ios
+  port: 22
+SWRTOG2N073:
+  hostname: 10.108.240.53
+  platform: ios
+  port: 22
+SWRTOG2N081:
+  hostname: 10.108.240.21
+  platform: ios
+  port: 22
+SWRTOG2N082:
+  hostname: 10.108.240.22
+  platform: ios
+  port: 22
+SWRTOG2N083:
+  hostname: 10.108.240.52
+  platform: ios
+  port: 22
+SWRTOG2N091:
+  hostname: 10.108.240.20
+  platform: ios
+  port: 22
+SWRTOG2N092:
+  hostname: 10.108.240.46
+  platform: ios
+  port: 22
+SWRTOG2N101:
+  hostname: 10.108.240.19
+  platform: ios
+  port: 22
+SWRTOG2N102:
+  hostname: 10.108.240.37
+  platform: ios
+  port: 22
+SWRTOG2N103:
+  hostname: 10.108.240.43
+  platform: ios
+  port: 22
+SWRTOG3N111:
+  hostname: 10.108.240.17
+  platform: ios
+  port: 22
+SWRTOG3N112:
+  hostname: 10.108.240.18
+  platform: ios
+  port: 22
+SWRTOG3N113:
+  hostname: 10.108.240.51
+  platform: ios
+  port: 22
+SWRTOG3N121:
+  hostname: 10.108.240.15
+  platform: ios
+  port: 22
+SWRTOG3N122:
+  hostname: 10.108.240.16
+  platform: ios
+  port: 22
+SWRTOG3N123:
+  hostname: 10.108.240.50
+  platform: ios
+  port: 22
+SWRTOG3N124:
+  hostname: 10.108.240.58
+  platform: ios
+  port: 22
+SWRTOG3N131:
+  hostname: 10.108.240.14
+  platform: ios
+  port: 22
+SWRTOG3N132:
+  hostname: 10.108.240.47
+  platform: ios
+  port: 22
+SWRTOG3N141:
+  hostname: 10.108.240.12
+  platform: ios
+  port: 22
+SWRTOG3N142:
+  hostname: 10.108.240.13
+  platform: ios
+  port: 22
+SWRTOG3N144:
+  hostname: 10.108.240.42
+  platform: ios
+  port: 22
+SWRTOG4N151:
+  hostname: 10.108.240.11
+  platform: ios
+  port: 22
+SWRTOG4N152:
+  hostname: 10.108.240.45
+  platform: ios
+  port: 22
+SWRTOG5N161:
+  hostname: 10.108.240.10
+  platform: ios
+  port: 22
+SWRTOG5N162:
+  hostname: 10.108.240.44
+  platform: ios
+  port: 22

@@ -1,0 +1,105 @@
+15: 
+    vlan_name: ZUTRITT
+    identy_group: MAB_RW_Zutritt
+    authorization_profile: Zutritt
+
+16: 
+    vlan_name: FM
+    identy_group: MAB_RW_FM
+    authorization_profile: MAB_RW_FM
+
+17: 
+    vlan_name: TK_Anlage
+    identy_group: MAB_RW_TK_Anlage
+    authorization_profile: MAB_RW_TK_Anlage
+
+18: 
+    vlan_name: GINA_RW
+    identy_group: MAB_RW_GINA
+    authorization_profile: MAB_RW_GINA
+
+114: 
+    vlan_name: TELEFONIE
+    identy_group: MAB_RW_Phones
+    authorization_profile: MAB_RW_Phones
+    voiceDomainPermission: True
+
+115: 
+    vlan_name: Cook_Chill
+    identy_group: MAB_RW_Cook_Chill
+    authorization_profile: MAB_RW_Cook&Chill
+
+116: 
+    vlan_name: WinClients
+    authorization_profile: RW_WinClients116
+    identy_group:
+
+118: 
+    vlan_name: IPTV
+    identy_group: MAB_RW_IPTV
+    authorization_profile: MAB_RW_IPTV
+
+120: 
+    vlan_name: GANG
+    identy_group: MAB_RW_GANG
+    authorization_profile: MAB_RW_GANG
+
+121: 
+    vlan_name: WLAN_Mgmt
+    identy_group: MAB_AccessPoint
+    authorization_profile: ap_aireos_old
+
+122: 
+    vlan_name: DRUCKER_RW
+    identy_group: MAB_RW_Drucker
+    authorization_profile: MAB_RW_Drucker
+
+127: 
+    vlan_name: DATACASH
+    identy_group: MAB_RW_DATACASH
+    authorization_profile: DATACASH
+
+208: 
+    vlan_name: ROE
+    identy_group: MAB_RW_ROE
+    authorization_profile: MAB_RW_ROE
+
+209: 
+    vlan_name: ALOM
+    identy_group: MAB_RW_ALOM
+    authorization_profile: MAB_RW_ALOM
+
+210: 
+    vlan_name: DICOM
+    identy_group: MAB_RW_DICOM
+    authorization_profile: DICOM
+
+211: 
+    vlan_name: AstraControl
+    identy_group: MAB_RW_AstraControl
+    authorization_profile: MAB_RW_AstraControl
+
+212: 
+    vlan_name: WST
+    authorization_profile: WST
+    identy_group:
+
+213: 
+    vlan_name: Siemens_VoIP
+    identy_group: MAB_RW_Siemens_VoIP
+    authorization_profile: MAB_RW_Siemens_VoIP
+
+227: 
+    vlan_name: Telepresence
+    identy_group: MAB_RW_Telepresence
+    authorization_profile: MAB_RW_Telepresence
+
+400: 
+    vlan_name: MEDIGATE
+    identy_group: MAB_RW_MEDIGATE
+    authorization_profile: MAB_RW_MEDIGATE
+
+904: 
+    vlan_name: PatMonitor_RW
+    identy_group: MAB_RW_PatMonitor
+    authorization_profile: MAB_RW_PatMonitor
