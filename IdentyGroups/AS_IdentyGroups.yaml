@@ -1,0 +1,20 @@
+48: 
+    vlan_name: Voice_AS
+    identy_group: MAB_AS_Voice
+    authorization_profile: MAB_AS_Voice
+
+53: 
+    vlan_name: PKE
+    identy_group: MAB_AS_PKE
+    authorization_profile: MAB_AS_PKE
+
+54: 
+    vlan_name: MAB
+    identy_group: MAB_AS_MAB
+    authorization_profile: MAB_AS_MAB
+
+55: 
+    vlan_name: Drucker
+    identy_group: MAB_AS_Drucker
+    authorization_profile: MAB_AS_Drucker
+

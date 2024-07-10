@@ -1,0 +1,26 @@
+127: 
+    vlan_name: DATACASH
+    identy_group: MAB_LL_DATACASH
+    authorization_profile: MAB_LL_DATACASH
+
+232: 
+    vlan_name: Video_Konferenz
+    identy_group: MAB_LL_Video_Konferenz
+    authorization_profile: MAB_LL_Video_Konferenz
+
+240: 
+    vlan_name: Siemens_VoIP_Telefone
+    identy_group: MAB_LL_Siemens_VoIP_Telefone
+    authorization_profile: MAB_LL_Siemens_VoIP_Telefone
+    voiceDomainPermission: True
+
+331: 
+    vlan_name: PKE_alt
+    identy_group: MAB_LL_PKE_alt
+    authorization_profile: MAB_LL_PKE_alt
+
+333: 
+    vlan_name: PKE
+    identy_group: MAB_LL_PKE
+    authorization_profile: MAB_LL_PKE
+

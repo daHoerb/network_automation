@@ -1,0 +1,159 @@
+53: 
+    vlan_name: Zutritt
+    identy_group: MAB_RH_Zutritt
+    authorization_profile: Zutritt
+
+51: 
+    vlan_name: FM
+    identy_group: MAB_RH_FM
+    authorization_profile: MAB_RH_FM
+
+55: 
+    vlan_name: PKE_alt
+    identy_group: MAB_RH_PKE_alt
+    authorization_profile: MAB_RH_PKE_alt
+
+54: 
+    vlan_name: TK_RH
+    identy_group: MAB_RH_TK_RH
+    authorization_profile: MAB_RH_TK_RH
+
+56: 
+    vlan_name: GINA_RH
+    identy_group: MAB_RH_GINA
+    authorization_profile: MAB_RH_GINA
+
+61: 
+    vlan_name: WLAN_Mgmt
+    identy_group: MAB_AccessPoint
+    authorization_profile: ap_aireos_old
+
+62: 
+    vlan_name: ZLT
+    identy_group: MAB_RH_ZLT
+    authorization_profile: MAB_RH_ZLT
+
+63: 
+    vlan_name: ZLT2
+    identy_group: MAB_RH_ZLT2
+    authorization_profile: MAB_RH_ZLT2
+
+127: 
+    vlan_name: DATACASH
+    identy_group: MAB_RH_DATACASH
+    authorization_profile: MAB_RH_DATACASH
+
+194: 
+    vlan_name: WIN_Client1
+    authorization_profile: RH_WinClients194
+    identy_group:
+
+195: 
+    vlan_name: PKE
+    identy_group: MAB_RH_PKE
+    authorization_profile: MAB_RH_PKE
+
+196: 
+    vlan_name: LABOR
+    identy_group: MAB_RH_LABOR
+    authorization_profile: MAB_RH_LABOR
+
+200: 
+    vlan_name: Gang
+    identy_group: MAB_RH_Gang
+    authorization_profile: MAB_RH_Gang
+
+201: 
+    vlan_name: Printer_RH
+    identy_group: MAB_RH_Printer
+    authorization_profile: MAB_RH_Printer
+
+202: 
+    vlan_name: Prima_RH
+    identy_group: MAB_RH_Prima
+    authorization_profile: MAB_RH_Prima
+
+203: 
+    vlan_name: MedienStrg
+    identy_group: MAB_RH_MedienStrg
+    authorization_profile: MAB_RH_MedienStrg
+
+207: 
+    vlan_name: VoIP
+    identy_group: MAB_RH_VoIP
+    authorization_profile: MAB_RH_VoIP
+
+292: 
+    vlan_name: ROE
+    identy_group: MAB_RH_ROE
+    authorization_profile: MAB_RH_ROE
+
+293: 
+    vlan_name: ALOM
+    identy_group: MAB_RH_ALOM
+    authorization_profile: MAB_RH_ALOM
+
+294: 
+    vlan_name: DICOM
+    identy_group: MAB_RH_DICOM
+    authorization_profile: MAB_RH_DICOM
+
+296: 
+    vlan_name: WST1
+    identy_group: 
+    authorization_profile: RH_WST1
+
+300: 
+    vlan_name: Dosis
+    identy_group: MAB_RH_Dosis
+    authorization_profile: MAB_RH_Dosis
+
+306: 
+    vlan_name: MT
+    identy_group: MAB_RH_MT
+    authorization_profile: MAB_RH_MT
+
+901: 
+    vlan_name: Patnet_1
+    identy_group: MAB_RH_Patnet_1
+    authorization_profile: MAB_RH_Patnet_1
+
+902: 
+    vlan_name: Patnet_2
+    identy_group: MAB_RH_Patnet_2
+    authorization_profile: MAB_RH_Patnet_2
+
+903: 
+    vlan_name: Int
+    identy_group: MAB_RH_Int
+    authorization_profile: MAB_RH_Int
+
+904: 
+    vlan_name: SWH
+    identy_group: MAB_RH_SWH
+    authorization_profile: MAB_RH_SWH
+
+905: 
+    vlan_name: Ackermann
+    identy_group: MAB_RH_Ackermann
+    authorization_profile: MAB_RH_Ackermann
+
+906: 
+    vlan_name: Patnet_Med
+    identy_group: MAB_RH_Patnet_Med
+    authorization_profile: MAB_RH_Patnet_Med
+
+907: 
+    vlan_name: Reinigung_Ext
+    identy_group: MAB_RH_Reinigung_Ext
+    authorization_profile: MAB_RH_Reinigung_Ext
+
+908: 
+    vlan_name: IPTV
+    identy_group: MAB_RH_IPTV
+    authorization_profile: MAB_RH_IPTV
+
+909: 
+    vlan_name: Pat_Internet
+    identy_group: MAB_RH_Pat_Internet
+    authorization_profile: MAB_RH_Pat_Internet

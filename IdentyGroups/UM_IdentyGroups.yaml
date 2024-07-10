@@ -1,0 +1,171 @@
+11: 
+    vlan_name: UM_TK
+    identy_group: MAB_UM_TK
+    authorization_profile: UM_TK
+
+20: 
+    vlan_name: KUEHL
+    identy_group: MAB_UM-RM_KUEHL
+    authorization_profile: UM-RM_KUEHL
+
+22: 
+    vlan_name: STERI
+    identy_group: MAB_UM-RM_STERI
+    authorization_profile: UM-RM_STERI
+
+23: 
+    vlan_name: INFUSION
+    identy_group: MAB_UM-RM_INFUSION
+    authorization_profile: UM-RM_INFUSION
+
+98: 
+    vlan_name: Haustechnik
+    identy_group: MAB_UM-RM_Haustechnik
+    authorization_profile: Haustechnik
+
+101: 
+    vlan_name: Phone_UM
+    identy_group: MAB_UM_Phones
+    authorization_profile: UM_Phones
+    voiceDomainPermission: True
+
+104: 
+    vlan_name: Phone_RM
+    identy_group: MAB_RM_Phones
+    authorization_profile: RM_Phones
+    voiceDomainPermission: True
+
+105: 
+    vlan_name: Drucker_UM
+    identy_group: MAB_UM_Drucker
+    authorization_profile: UM_Printer
+
+106: 
+    vlan_name: Drucker_RM
+    identy_group: MAB_RM_Drucker
+    authorization_profile: RM_Printer
+
+111: 
+    vlan_name: Zutritt
+    identy_group: MAB_UM-RM_Zeiterfassung
+    authorization_profile: Zutritt
+
+112: 
+    vlan_name: Zentralkueche
+    identy_group: MAB_UM-RM_Zentralkueche
+    authorization_profile: UM-RM_Zentralkueche
+
+113: 
+    vlan_name: GINA_UM_RM
+    identy_group: MAB_UM-RM_Gina
+    authorization_profile: UM-RM_Gina
+
+114: 
+    vlan_name: PAT_MON_2OG
+    identy_group: MAB_UM-RM_PAT_MON_2OG
+    authorization_profile: UM-RM_PAT_MON_2OG
+
+115: 
+    vlan_name: PAT_MON_1OG
+    identy_group: MAB_UM-RM_PAT_MON_1OG
+    authorization_profile: UM-RM_PAT_MON_1OG
+
+116: 
+    vlan_name: PAT_MON_IBST
+    identy_group: MAB_UM-RM_PAT_MON_IBST
+    authorization_profile: UM-RM_PAT_MON_IBST
+
+117: 
+    vlan_name: PAT_MON_OP
+    identy_group: MAB_UM-RM_PAT_MON_OP
+    authorization_profile: UM-RM_PAT_MON_OP
+
+126: 
+    vlan_name: Videoaufruf
+    identy_group: MAB_UM-RM_Videoaufruf
+    authorization_profile: UM-RM_Videoaufruf
+
+127: 
+    vlan_name: DATACASH
+    identy_group: MAB_UM-RM_DATACASH
+    authorization_profile: UM-RM_DATACASH
+
+129: 
+    vlan_name: PKE
+    identy_group: MAB_UM-RM_PKE
+    authorization_profile: UM-RM_PKE
+
+196: 
+    vlan_name: TK2_UM
+    identy_group: MAB_UM_TK2
+    authorization_profile: UM_TK2
+
+197: 
+    vlan_name: PAT_MON_SMA
+    identy_group: MAB_UM-RM_PAT_MON_SMA
+    authorization_profile: UM-RM_PAT_MON_SMA
+
+198: 
+    vlan_name: DICOM
+    identy_group: MAB_UM-RM_DICOM
+    authorization_profile: UM-RM_DICOM
+
+199: 
+    vlan_name: ALOM
+    identy_group: MAB_UM-RM_ALOM
+    authorization_profile: UM-RM_ALOM
+
+200: 
+    vlan_name: WST1
+    identy_group: 
+    authorization_profile: UM_RM_WST
+
+204: 
+    vlan_name:  DosisMes
+    identy_group: MAB_UM-RM_DosisMes
+    authorization_profile: UM-RM_DosisMes
+
+205: 
+    vlan_name:  LABOR
+    identy_group: MAB_UM-RM_LABOR
+    authorization_profile: UM-RM_LABOR
+
+206: 
+    vlan_name:  Lichtruf_UM
+    identy_group: MAB_UM_Lichtruf_206
+    authorization_profile: UM_Lichtruf_206
+
+207: 
+    vlan_name:  PatTV_UM
+    identy_group: MAB_UM_PatTV
+    authorization_profile: UM_PatTV
+
+209: 
+    vlan_name:  VoIP
+    identy_group: MAB_UM-RM_VoIP
+    authorization_profile: UM-RM_VoIP
+
+210: 
+    vlan_name:  MT_TZW
+    identy_group: MAB_UM-RM_MT_TZW
+    authorization_profile: UM-RM_MT_TZW
+
+211: 
+    vlan_name:  PKE_alt
+    identy_group: MAB_UM-RM_PKE_alt
+    authorization_profile: UM-RM_PKE_alt
+
+400: 
+    vlan_name:  MEDIGATE
+    identy_group: MAB_UM-RM_MEDIGATE
+    authorization_profile: UM-RM_MEDIGATE
+
+900: 
+    vlan_name:  Video
+    identy_group: MAB_UM-RM_Video
+    authorization_profile: UM-RM_Video
+
+980: 
+    vlan_name:  UM_Lichtruf
+    identy_group: MAB_UM_Lichtruf
+    authorization_profile: UM_Lichtruf

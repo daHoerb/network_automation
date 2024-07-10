@@ -1,0 +1,118 @@
+127: 
+    vlan_name: DATACASH
+    identy_group: MAB_UL_DATACASH
+    authorization_profile: MAB_UL_DATACASH
+
+200: 
+    vlan_name: PRIMA_Server
+    identy_group: MAB_UL_PRIMA_Server
+    authorization_profile: MAB_UL_PRIMA_Server
+
+229: 
+    vlan_name: Drucker_UL
+    identy_group: MAB_UL_Drucker
+    authorization_profile: MAB_UL_Drucker
+
+231: 
+    vlan_name: PKE_alt_Zutritt
+    identy_group: MAB_UL_PKE_alt_Zutritt
+    authorization_profile: MAB_UL_PKE_alt_Zutritt
+
+232: 
+    vlan_name: PKE_alt
+    identy_group: MAB_UL_PKE_alt
+    authorization_profile: MAB_UL_PKE_alt
+
+233: 
+    vlan_name: PKE
+    identy_group: MAB_UL_PKE
+    authorization_profile: MAB_UL_PKE
+
+235: 
+    vlan_name: IADS
+    identy_group: MAB_UL_IADS
+    authorization_profile: MAB_UL_IADS
+
+236: 
+    vlan_name: PAT_MON
+    identy_group: MAB_UL_PAT_MON
+    authorization_profile: MAB_UL_PAT_MON
+
+237: 
+    vlan_name: MEDIGATE
+    identy_group: MAB_UL_MEDIGATE
+    authorization_profile: MAB_UL_MEDIGATE
+
+239: 
+    vlan_name: GINA_UL  
+    identy_group: MAB_UL_GINA
+    authorization_profile: MAB_UL_GINA
+
+241: 
+    vlan_name: ALOM  
+    identy_group: MAB_UL_ALOM
+    authorization_profile: MAB_UL_ALOM
+
+242: 
+    vlan_name: Dicom
+    identy_group: MAB_UL_Dicom
+    authorization_profile: MAB_UL_Dicom
+
+246: 
+    vlan_name: Siemens_VoIP_Telefone
+    identy_group: MAB_UL_Siemens_VoIP_Telefone
+    authorization_profile: MAB_UL_Siemens_VoIP_Telefone
+    voiceDomainPermission: True
+
+250: 
+    vlan_name: BARCODE
+    identy_group: MAB_UL_BARCODE
+    authorization_profile: MAB_UL_BARCODE
+
+251: 
+    vlan_name: MT
+    identy_group: MAB_UL_MT
+    authorization_profile: MAB_UL_MT
+
+252: 
+    vlan_name: MTAppli
+    identy_group: MAB_UL_MTAppli
+    authorization_profile: MAB_UL_MTAppli
+
+252: 
+    vlan_name: MTAppli
+    identy_group: MAB_UL_MTAppli
+    authorization_profile: MAB_UL_MTAppli
+
+332: 
+    vlan_name: VIDEOAUFRUF
+    identy_group: MAB_UL_VIDEOAUFRUF
+    authorization_profile: MAB_UL_VIDEOAUFRUF
+
+334: 
+    vlan_name: Video
+    identy_group: MAB_UL_Video
+    authorization_profile: MAB_UL_Video
+
+431: 
+    vlan_name: INFUSION
+    identy_group: MAB_UL_INFUSION
+    authorization_profile: MAB_UL_INFUSION
+
+432: 
+    vlan_name: KUEHL
+    identy_group: MAB_UL_KUEHL
+    authorization_profile: MAB_UL_KUEHL
+
+433: 
+    vlan_name: LABOR
+    identy_group: MAB_UL_LABOR
+    authorization_profile: MAB_UL_LABOR
+
+434: 
+    vlan_name: STERI
+    identy_group: MAB_UL_STERI
+    authorization_profile: MAB_UL_STERI
+
+
+

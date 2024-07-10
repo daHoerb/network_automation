@@ -1,0 +1,146 @@
+
+
+28: 
+    vlan_name: FM
+    identy_group: MAB_UO_FM
+    authorization_profile: MAB_UO_FM
+
+29: 
+    vlan_name: TK2_UO
+    identy_group: MAB_UO_TK2
+    authorization_profile: MAB_UO_TK2
+
+34: 
+    vlan_name: Zutritt
+    identy_group: MAB_UO_Zutritt
+    authorization_profile: Zutritt
+
+127: 
+    vlan_name: DATACASH
+    identy_group: MAB_UO_DATACASH
+    authorization_profile: MAB_UO_DATACASH
+
+128: 
+    vlan_name: TK
+    identy_group: MAB_UO_TK
+    authorization_profile: MAB_UO_TK
+
+129: 
+    vlan_name: Telepresence
+    identy_group: MAB_UO_Telepresence
+    authorization_profile: MAB_UO_Telepresence
+
+133: 
+    vlan_name: Drucker
+    identy_group: MAB_UO_Drucker
+    authorization_profile: MAB_UO_Drucker
+
+134: 
+    vlan_name: STERI
+    identy_group: MAB_UO_STERI
+    authorization_profile: MAB_UO_STERI
+
+136: 
+    vlan_name: PKE
+    identy_group: MAB_UO_PKE
+    authorization_profile: MAB_UO_PKE
+
+137: 
+    vlan_name: Phone_UO
+    identy_group: MAB_UO_Phone
+    authorization_profile: MAB_UO_Phone
+
+181: 
+    vlan_name: Videoaufruf
+    identy_group: MAB_UO_Videoaufruf
+    authorization_profile: MAB_UO_Videoaufruf
+
+189: 
+    vlan_name: ALOM
+    identy_group: MAB_UO_ALOM
+    authorization_profile: MAB_UO_ALOM
+
+190: 
+    vlan_name: ZLT
+    identy_group: MAB_UO_ZLT
+    authorization_profile: MAB_UO_ZLT
+
+234: 
+    vlan_name: GINA_UO
+    identy_group: MAB_UO_GINA
+    authorization_profile: MAB_UO_GINA
+
+274: 
+    vlan_name: LABOR
+    identy_group: MAB_UO_LABOR
+    authorization_profile: MAB_UO_LABOR
+
+275: 
+    vlan_name: MT
+    identy_group: MAB_UO_MT
+    authorization_profile: MAB_UO_MT
+
+276: 
+    vlan_name: Roengten
+    identy_group: MAB_UO_Roengten
+    authorization_profile: MAB_UO_Roengten
+
+278: 
+    vlan_name: DICOM
+    identy_group: MAB_UO_DICOM
+    authorization_profile: MAB_UO_DICOM
+
+279: 
+    vlan_name: INFUSION
+    identy_group: MAB_UO_INFUSION
+    authorization_profile: MAB_UO_INFUSION
+
+281: 
+    vlan_name: PAT_MON_IBST
+    identy_group: MAB_UO_PAT_MON_IBST
+    authorization_profile: MAB_UO_PAT_MON_IBST
+
+381: 
+    vlan_name: PAT_MON_AWR
+    identy_group: MAB_UO_PAT_MON_AWR
+    authorization_profile: MAB_UO_PAT_MON_AWR
+
+400: 
+    vlan_name: MEDIGATE
+    identy_group: MAB_UO_MEDIGATE
+    authorization_profile: MAB_UO_MEDIGATE
+
+900: 
+    vlan_name: Video
+    identy_group: MAB_UO_Video
+    authorization_profile: MAB_UO_Video
+
+901: 
+    vlan_name: Sanitas
+    identy_group: MAB_UO_Sanitas
+    authorization_profile: MAB_UO_Sanitas
+
+902: 
+    vlan_name: Pat-Inet
+    identy_group: MAB_UO_Pat-Inet
+    authorization_profile: MAB_UO_Pat-Inet
+
+903: 
+    vlan_name: Siemens_TK
+    identy_group: MAB_UO_Siemens_TK
+    authorization_profile: MAB_UO_Siemens_TK
+
+960: 
+    vlan_name: ZLT-2
+    identy_group: MAB_UO_ZLT-2
+    authorization_profile: MAB_UO_ZLT-2
+
+970: 
+    vlan_name: PAT_IP_TV
+    identy_group: MAB_UO_PAT_IP_TV
+    authorization_profile: MAB_UO_PAT_IP_TV
+
+980: 
+    vlan_name: OU_Lichtruf
+    identy_group: MAB_UO_Lichtruf
+    authorization_profile: MAB_UO_Lichtruf

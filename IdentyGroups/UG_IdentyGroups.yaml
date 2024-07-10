@@ -1,0 +1,171 @@
+2: 
+    vlan_name: PAT_MON_OP
+    identy_group: MAB_UG_PAT_MON_OP
+    authorization_profile: MAB_UG_PAT_MON_OP
+
+18: 
+    vlan_name: PAT_MON_AWR
+    identy_group: MAB_UG_PAT_MON_AWR
+    authorization_profile: MAB_UG_PAT_MON_AWR
+
+26: 
+    vlan_name: Kassenautomat
+    identy_group: MAB_UG_Kassenautomat
+    authorization_profile: MAB_UG_Kassenautomat
+
+112: 
+    vlan_name: SiemensUG
+    identy_group: MAB_UG_Siemens
+    authorization_profile: MAB_UG_Siemens
+    voiceDomainPermission: True
+
+116: 
+    vlan_name: SiemensLG
+    identy_group: MAB_LG_Siemens
+    authorization_profile: MAB_LG_Siemens
+    voiceDomainPermission: True
+
+117: 
+    vlan_name: DruckerLG
+    identy_group: MAB_LG_Drucker
+    authorization_profile: MAB_LG_Drucker
+    
+118: 
+    vlan_name: FM
+    identy_group: MAB_UG_FM
+    authorization_profile: MAB_UG_FM
+
+119: 
+    vlan_name: DruckerUG
+    identy_group: MAB_UG_Drucker
+    authorization_profile: MAB_UG_Drucker
+
+120: 
+    vlan_name: PKE_alt
+    identy_group: MAB_UG_PKE_alt
+    authorization_profile: MAB_UG_PKE_alt
+
+121: 
+    vlan_name: Medienstrg_Video
+    identy_group: MAB_UG_Medienstrg_Video
+    authorization_profile: MAB_UG_Medienstrg_Video
+
+122: 
+    vlan_name: GINA_UG
+    identy_group: MAB_UG_GINA
+    authorization_profile: MAB_UG_GINA_
+
+127: 
+    vlan_name: DATACASH
+    identy_group: MAB_UG_DATACASH
+    authorization_profile: MAB_UG_DATACASH
+
+129: 
+    vlan_name: Medienstrg_Audio
+    identy_group: MAB_UG_Medienstrg_Audio
+    authorization_profile: MAB_UG_Medienstrg_Audio
+
+212: 
+    vlan_name: Roengten
+    identy_group: MAB_UG_Roengten
+    authorization_profile: MAB_UG_Roengten
+
+212: 
+    vlan_name: Roengten
+    identy_group: MAB_UG_Roengten
+    authorization_profile: MAB_UG_Roengten
+
+213: 
+    vlan_name: ALOM
+    identy_group: MAB_UG_ALOM
+    authorization_profile: MAB_UG_ALOM
+
+214: 
+    vlan_name: DICOM
+    identy_group: MAB_UG_DICOM
+    authorization_profile: MAB_UG_DICOM
+
+218: 
+    vlan_name: PAT_MON_IBST
+    identy_group: MAB_UG_PAT_MON_IBST
+    authorization_profile: MAB_UG_PAT_MON_IBST
+
+220: 
+    vlan_name: VIDEO-Ueberwachung
+    identy_group: MAB_UG_VIDEO-Ueberwachung
+    authorization_profile: MAB_UG_VIDEO-Ueberwachung
+
+226: 
+    vlan_name: Voice
+    identy_group: MAB_UG_Voice
+    authorization_profile: MAB_UG_Voice
+
+227: 
+    vlan_name: Videoaufruf
+    identy_group: MAB_UG_Videoaufruf
+    authorization_profile: MAB_UG_Videoaufruf
+
+228: 
+    vlan_name: PKE
+    identy_group: MAB_LS-UG_PKE
+    authorization_profile: MAB_LS-UG_PKE
+
+317: 
+    vlan_name: INFUSION
+    identy_group: MAB_UG_INFUSION
+    authorization_profile: MAB_UG_INFUSION
+
+318: 
+    vlan_name: KUEHL
+    identy_group: MAB_UG_KUEHL
+    authorization_profile: MAB_UG_KUEHL
+
+319: 
+    vlan_name: STERI 
+    identy_group: MAB_UG_STERI
+    authorization_profile: MAB_UG_STERI
+
+320: 
+    vlan_name: LABOR
+    identy_group: MAB_UG_LABOR
+    authorization_profile: MAB_UG_LABOR
+
+321: 
+    vlan_name: MT
+    identy_group: MAB_UG_MT
+    authorization_profile: MAB_UG_MT
+
+400: 
+    vlan_name: MEDIGATE
+    identy_group: MAB_UG_MEDIGATE
+    authorization_profile: MAB_UG_MEDIGATE
+
+700: 
+    vlan_name: MARC
+    identy_group: MAB_UG_MARC
+    authorization_profile: MAB_UG_MARC
+
+900: 
+    vlan_name: MT
+    identy_group: MAB_UG_MT
+    authorization_profile: MAB_UG_MT
+
+905: 
+    vlan_name: EAM
+    identy_group: MAB_LG-UG_EAM
+    authorization_profile: MAB_LG-UG_EAM
+
+910: 
+    vlan_name: Patienteninternet
+    identy_group: MAB_UG_Patienteninternet
+    authorization_profile: MAB_UG_Patienteninternet
+
+915: 
+    vlan_name: Introe
+    identy_group: MAB_UG_Introe
+    authorization_profile: MAB_UG_Introe
+
+920: 
+    vlan_name: PatMon
+    identy_group: MAB_UG_PatMon
+    authorization_profile: MAB_UG_PatMon
