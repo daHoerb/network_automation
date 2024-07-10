@@ -7,7 +7,7 @@ from nornir.core.task import Task, Result
 import sys
 import time
 from deepdiff import DeepDiff
-
+import yaml
 
 def get_mac_address_access(task):
     host=str(task.host)
@@ -52,6 +52,7 @@ def get_access_ports(task):
             intf_list.append(intf_info["interface"])
     
     return Result(task.host, intf_list)
+
     
 def dot1x_closed_config(task):
 
@@ -71,20 +72,15 @@ def dot1x_closed_config(task):
     print(f'{host}: The following Access Interfaces will be configured:')
     print('--------------------------------------------')
     print(access_ports)
-    '''
-    eingabe = ''
-    while (eingabe != "y"):
-        eingabe = input(host+": do you want to configure ports (y/n): [y] ")
-        if eingabe == "n":
-            exit("TERMINATE SCRIPT")
-    '''
+
     # configure interfaces
     for intf_id in access_ports:
         intf_config = task.run(netmiko_send_config,name=(host +": Set Interface command for "+intf_id),config_commands=[
             "interface "+ intf_id,
-            "access-session closed"]
+            "no access-session closed",
+            "no access-session port-control auto"]
         )
-        #print_result(intf_config)
+        print_result(intf_config)
 
     time.sleep(3)
 
@@ -111,15 +107,6 @@ def dot1x_closed_config(task):
             
         
     # remove configure interfaces
-    '''
-    for intf_id in intf_remove_config:
-        print ("Remove config from "+intf_id)
-        intf_config = task.run(netmiko_send_config,name=(host +": Set Interface command for "+intf_id),config_commands=[
-            "interface "+ intf_id,
-            "no access-session port-control auto"]
-        )
-        print_result(intf_config)
-        '''
 
     return intf_remove_config
 
@@ -137,6 +124,19 @@ class Logger:
         self.console.flush()
         self.file.flush()
 
+def update_config_yaml(path_inventory_file):
+    # Lade die vorhandene config.yaml-Datei
+    with open("config.yaml", "r") as config_file:
+        config_data = yaml.safe_load(config_file)
+
+    # Aktualisiere den Pfad zur hosts.yaml-Datei
+    config_data["inventory"]["options"]["host_file"] = path_inventory_file
+
+    # Schreibe die aktualisierte Konfiguration zurück in die config.yaml-Datei
+    with open("config.yaml", "w") as config_file:
+        yaml.dump(config_data, config_file, default_flow_style=False)
+
+
 #==============================================================================
 # ---- Main: Run Commands
 #==============================================================================  
@@ -145,17 +145,21 @@ class Logger:
 path = './Logs/configure_intf_dot1x_closed_output.txt'
 sys.stdout = Logger(path)
 
+# Pfad zum Inventory File
+path_inventory_file = 'Inventory/hosts_UK.yaml'  # Passe den Dateipfad entsprechend an
+update_config_yaml(path_inventory_file)
+
 # init Nornir Object
 nr = InitNornir(config_file="config.yaml")
 #hosts = nr.filter(dot1x="yes") # use only hosts where "data: dot1x: yes" is set in Host Inventory File!
 #nr = nr.filter(hostname="SWUSOG4VH12")
-nr = nr.filter(lambda host: "LT5" in host.name)
+#nr = nr.filter(lambda host: "SWUKEGVTH013" in host.name)
 hosts = nr.inventory.hosts
 print (hosts)
 
 
 result_intf_dot1x_monitor = nr.run(task=dot1x_closed_config)
-print_result(result_intf_dot1x_monitor)
+#print_result(result_intf_dot1x_monitor)
 
 failed_hosts = []
 for host, result in result_intf_dot1x_monitor.items():

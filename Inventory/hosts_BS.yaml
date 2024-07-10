@@ -1,0 +1,16 @@
+SWBS0001:
+  hostname: 10.208.74.1
+  platform: ios
+  port: 22
+SWBS0002:
+  hostname: 10.208.74.2
+  platform: ios
+  port: 22
+SWBS0003:
+  hostname: 10.208.74.3
+  platform: ios
+  port: 22
+SWBS0004:
+  hostname: 10.208.74.4
+  platform: ios
+  port: 22

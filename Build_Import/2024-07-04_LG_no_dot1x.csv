@@ -1,0 +1,3 @@
+MACAddress,ip,NAS-IP-Address,NAS-Port-Id,Description,OUI,FailureReason,Vlan-ID
+F4:A8:0D:1E:97:1F,,SWLG01LIFT1,GigabitEthernet1/0/18,***DOT1X*** VLAN: 116 User: 00-1A-E8-08-59-98 Domain: VOICE +++,UNKNOWN,15039 Rejected per authorization profile,110
+C0:3E:BA:C5:AF:A1,10.108.210.156,SWLGEGV9A1,GigabitEthernet1/0/20,***DOT1X*** VLAN: 116 User: 00-1A-E8-08-59-AA Domain: VOICE +++ VLAN: 110 User: c03ebac5afa1 Domain: DATA +++,Dell Inc.,15039 Rejected per authorization profile,110

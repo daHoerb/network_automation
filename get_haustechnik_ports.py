@@ -1,48 +1,47 @@
 from nornir import InitNornir
 from nornir_napalm.plugins.tasks import napalm_get
 from nornir_napalm.plugins.tasks.napalm_configure import napalm_configure
-#from nornir_netmiko.tasks import netmiko_send_config
-from nornir_netmiko import netmiko_send_command, netmiko_send_config, netmiko_save_config, netmiko_multiline
-from ttp import ttp
-#from nornir.plugins.tasks import commands
+from nornir_netmiko import netmiko_send_command, netmiko_send_config
 from nornir_utils.plugins.functions import print_result
-#from nornir.plugins.functions.text import print_result
-#from nornir.plugins.tasks.networking import napalm_get
-#from nornir.plugins.tasks.networking import netmiko_send_command
-#from nornir.plugins.tasks.networking.netmiko_send_config import netmiko_send_config
 from nornir.core.task import Task, Result
-from netmiko import ConnectHandler
-import csv
-import os
-import pprint
-import json
 import sys
-import time
 import yaml
 
-
-def global_config(task, config):
-
-    with open(config, 'r') as file:
-        config_lines = file.readlines()
-
-    r = task.run(netmiko_send_config, name='Set Global Config via Configfile', config_file=config, read_timeout=10)
-    print_result(r)
-
-def global_config_multiline(task, config):
-
-    with open(config, 'r') as file:
-        config_lines = file.readlines()
+#Find mac on interface
+def mac_on_intf(intf, mac_address_table):
     
-    print (config_lines)
+    for entry in mac_address_table["mac_address_table"]:
+        if entry['interface'] == intf:
+            return entry['mac']
+    
+    return "No Mac found"
 
-    r = task.run(netmiko_multiline, name='Set Global Config via multiline commands', commands=config_lines)
-    print_result(r)
 
-def global_command(task, command):
+def get_haustechnik_ports(task, haustechnik_vlanid):
+    r = task.run(task=netmiko_send_command, name="get parsed data from \"sh interface switchport\"", command_string="sh interfaces switchport", use_textfsm=True)
+    host=str(task.host)
+    intf_dict = r.result
 
-    r = task.run(netmiko_send_command, name='Send command', command_string = command)
-    print_result(r)
+    # get access equal voice ports
+    intf_list = []
+    for intf_info in intf_dict:
+      
+        #print (intf_info)
+        #print (type(intf_info['access_vlan']))
+        if intf_info['access_vlan'] == "unassigned":
+            continue
+
+        if int(intf_info['access_vlan']) == haustechnik_vlanid and intf_info["mode"] == "down":
+            intf_list.append(intf_info["interface"])
+            print (f"{host}: Interface is DOWN with Haustechnik vlan {haustechnik_vlanid}: {intf_info['interface']}")
+        
+        if int(intf_info['access_vlan']) == haustechnik_vlanid and intf_info["mode"] != "down":
+            intf_list.append(intf_info["interface"])
+            print (f"{host}: Interface UP with Haustechnik vlan {haustechnik_vlanid}: {intf_info['interface']}")
+    
+    return Result(task.host, intf_list)
+    
+
 
 class Logger:
 
@@ -75,32 +74,31 @@ def update_config_yaml(path_inventory_file):
 #==============================================================================  
 
 # write output stream to file
-path = './Logs/global_config.txt'
+path = './Logs/get_haustechnik_ports.txt'
 sys.stdout = Logger(path)
 
+# Define Haustechnik Vlanid
+haustechnik_vlanid = 62
+
 # Pfad zum Inventory File
-path_inventory_file = 'Inventory/hosts_LG.yaml'  # Passe den Dateipfad entsprechend an
+path_inventory_file = 'Inventory/hosts_RH.yaml'  # Passe den Dateipfad entsprechend an
 update_config_yaml(path_inventory_file)
+
+
 # init Nornir Object
 nr = InitNornir(config_file="config.yaml")
 #hosts = nr.filter(dot1x="yes") # use only hosts where "data: dot1x: yes" is set in Host Inventory File!
-#nr = nr.filter(hostname="10.108.240.48")
-#filtered_hosts = nr.filter(lambda h: h.name.startswith("SWRWLT011") and h.site == "Wien")
-#nr = nr.filter(lambda host: "SWUG04V12" in host.name)
-
+#nr = nr.filter(hostname="SWUSOG4VH12")
+#nr = nr.filter(lambda host: "BU112" in host.name)
 hosts = nr.inventory.hosts
-for host in hosts:
-    print (host)
+print (hosts)
 
-# define the confing file which will be applied
-#command = "ip scp server enable"
-#results_global = nr.run(task=global_command, command=command)
-results_global = nr.run(task=global_config, config="config/PSN3.cfg")
-print_result(results_global)
 
+result_get_haustechnik_ports = nr.run(task=get_haustechnik_ports, haustechnik_vlanid=haustechnik_vlanid)
+#print_result(result_get_haustechnik_ports)
 
 failed_hosts = []
-for host, result in results_global.items():
+for host, result in result_get_haustechnik_ports.items():
     if result.failed:
         print(f"Task failed on host {host}: {result}")
         failed_hosts.append(host)
@@ -111,5 +109,4 @@ print ("\n")
 print('The Task failed on the following Hosts:')
 print('--------------------------------------------')
 print (failed_hosts)
-
 

@@ -1,3 +1,4 @@
+
 from nornir import InitNornir
 from nornir_napalm.plugins.tasks import napalm_get
 from nornir_napalm.plugins.tasks.napalm_configure import napalm_configure
@@ -54,13 +55,12 @@ def get_access_ports(task):
     
 def get_miniswitch(task):
 
-
     #get mac table for access ports before configuration
     r = task.run(task=get_mac_address_access)
     mac_address_dict = r.result
 
     host=str(task.host)
-    print ("Processing "+host+":")
+    #print ("Processing "+host+":")
   
     #get access port list
     s =task.run(task=get_access_ports)
@@ -104,7 +104,7 @@ def get_miniswitch(task):
     # Print Interfaces with more than 1 MAC
     intf_fail = []
     for intf in intf_count:
-        if intf_count[intf] > 1:
+        if intf_count[intf] > 1: #and intf2vlanid_dict[intf] == 246:
             print (f"WARNING!!! {host}: {intf} has {intf_count[intf]} MAC Addresses. Vlan ID: {intf2vlanid_dict[intf]}")
             intf_fail.append(intf)
 
@@ -146,10 +146,10 @@ path = './Logs/get_miniswitch.txt'
 sys.stdout = Logger(path)
 
 # Define Voice Vlanid
-voice_vlanid = [101,104,980]
+voice_vlanid = [246]
 
 # Pfad zum Inventory File
-path_inventory_file = 'Inventory/hosts_UM.yaml'  # Passe den Dateipfad entsprechend an
+path_inventory_file = 'Inventory/hosts_UL.yaml'  # Passe den Dateipfad entsprechend an
 update_config_yaml(path_inventory_file)
 
 

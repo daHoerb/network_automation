@@ -1,0 +1,8 @@
+SWAO0001:
+  hostname: 10.108.66.62
+  platform: ios
+  port: 22
+SWAO0002:
+  hostname: 10.108.66.61
+  platform: ios
+  port: 22

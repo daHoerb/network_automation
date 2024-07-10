@@ -7,29 +7,51 @@ from nornir.core.task import Task, Result
 import sys
 import yaml
 
+#Find mac on interface
+def mac_on_intf(intf, mac_address_table):
+    
+    for entry in mac_address_table["mac_address_table"]:
+        if entry['interface'] == intf:
+            return entry['mac']
+    
+    return "No Mac found"
 
 
 def get_access_equal_voice_ports(task, voice_vlanid):
     r = task.run(task=netmiko_send_command, name="get parsed data from \"sh interface switchport\"", command_string="sh interfaces switchport", use_textfsm=True)
     host=str(task.host)
     intf_dict = r.result
+    #print (intf_dict)
+    #s= task.run(task=napalm_get,getters=["mac_address_table"])
+    #mac_address_table = s.result
 
     # get access equal voice ports
     intf_list = []
     for intf_info in intf_dict:
-        #print (intf_info)
+        #mac = mac_on_intf(intf_info['interface'],mac_address_table)
+        #print (intf_info['access_vlan'])
         #print (type(intf_info['access_vlan']))
-        if intf_info['access_vlan'] == "unassigned":
+        #if intf_info['access_vlan'] == "unassigned":
+            #continue
+        #if intf_info['voice_vlan'] == "none":
+            #print (f"{host}: Interface with no voice vlan: {intf_info['interface']}")
+            #continue
+        #if int(intf_info['voice_vlan']) != voice_vlanid:
+            
+            #print (f"{host}: Interface with other default voice vlan {int(intf_info['voice_vlan'])}: {intf_info['interface']}")
+        
+        if (intf_info['access_vlan']) == "unassigned":
             continue
-        if intf_info['voice_vlan'] == "none":
-            print (f"{host}: Interface with no voice vlan: {intf_info['interface']}")
-            continue
-        if int(intf_info['voice_vlan']) != voice_vlanid:
-            print (f"{host}: Interface with other defualt voice vlan {int(intf_info['voice_vlan'])}: {intf_info['interface']}")
 
-        if int(intf_info['access_vlan']) == voice_vlanid: #and intf_info["mode"] != "down":
+        if int(intf_info['access_vlan']) == voice_vlanid and intf_info["mode"] == "down":
             intf_list.append(intf_info["interface"])
-            print (f"{host}: Interface with equal access/voice vlan 101: {intf_info['interface']}")
+            print (f"{host}: Interface is DOWN with equal access/voice vlan {voice_vlanid}: {intf_info['interface']}")
+        
+        if int(intf_info['access_vlan']) == voice_vlanid and intf_info["mode"] != "down":
+            intf_list.append(intf_info["interface"])
+            print (f"{host}: Interface with equal access/voice vlan {voice_vlanid}: {intf_info['interface']}")
+
+        #print (intf_list)
     
     return Result(task.host, intf_list)
     
@@ -70,18 +92,18 @@ path = './Logs/get_access_equal_voice_ports.txt'
 sys.stdout = Logger(path)
 
 # Define Voice Vlanid
-voice_vlanid = 101
+voice_vlanid = 112
 
 # Pfad zum Inventory File
-path_inventory_file = 'Inventory/hosts_UM.yaml'  # Passe den Dateipfad entsprechend an
+path_inventory_file = 'Inventory/hosts_UG.yaml'  # Passe den Dateipfad entsprechend an
 update_config_yaml(path_inventory_file)
 
 
 # init Nornir Object
 nr = InitNornir(config_file="config.yaml")
 #hosts = nr.filter(dot1x="yes") # use only hosts where "data: dot1x: yes" is set in Host Inventory File!
-#nr = nr.filter(hostname="SWUSOG4VH12")
-#nr = nr.filter(lambda host: "EGVH13" in host.name)
+#nr = nr.filter(hostname="SWULWHVH11")
+#nr = nr.filter(lambda host: "SWULWHVH11" in host.name)
 hosts = nr.inventory.hosts
 print (hosts)
 

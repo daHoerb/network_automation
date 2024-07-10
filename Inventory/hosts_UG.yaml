@@ -1,0 +1,172 @@
+SWLG0001:
+  hostname: 10.108.129.3
+  platform: ios
+  port: 22
+SWUG01V11:
+  hostname: 10.108.129.36
+  platform: ios
+  port: 22
+SWUG02V11:
+  hostname: 10.108.129.38
+  platform: ios
+  port: 22
+SWUG02V21:
+  hostname: 10.108.129.85
+  platform: ios
+  port: 22
+SWUG03V11:
+  hostname: 10.108.129.39
+  platform: ios
+  port: 22
+SWUG04V11:
+  hostname: 10.108.129.40
+  platform: ios
+  port: 22
+SWUG04V12:
+  hostname: 10.108.129.41
+  platform: ios
+  port: 22
+SWUG05V11:
+  hostname: 10.108.129.42
+  platform: ios
+  port: 22
+SWUGEGAO1:
+  hostname: 10.108.129.35
+  platform: ios
+  port: 22
+SWUGEGEZ1:
+  hostname: 10.108.129.34
+  platform: ios
+  port: 22
+SWUGEGH11:
+  hostname: 10.108.129.28
+  platform: ios
+  port: 22
+SWUGEGH12:
+  hostname: 10.108.129.29
+  platform: ios
+  port: 22
+SWUGEGH14:
+  hostname: 10.108.129.79
+  platform: ios
+  port: 22
+SWUGEGLA1:
+  hostname: 10.108.129.43
+  platform: ios
+  port: 22
+SWUGEGMR11:
+  hostname: 10.108.129.37
+  platform: ios
+  port: 22
+SWUGEGPH1:
+  hostname: 10.108.129.25
+  platform: ios
+  port: 22
+SWUGEGRO1:
+  hostname: 10.108.129.26
+  platform: ios
+  port: 22
+SWUGEGRO3:
+  hostname: 10.108.129.83
+  platform: ios
+  port: 22
+SWUGEGV241:
+  hostname: 10.108.129.24
+  platform: ios
+  port: 22
+SWUGEGV242:
+  hostname: 10.108.129.84
+  platform: ios
+  port: 22
+SWUGEGV243:
+  hostname: 10.108.129.60
+  platform: ios
+  port: 22
+SWUGEGV244:
+  hostname: 10.108.129.45
+  platform: ios
+  port: 22
+SWUGEGV42:
+  hostname: 10.108.129.57
+  platform: ios
+  port: 22
+SWUGEGV43:
+  hostname: 10.108.129.49
+  platform: ios
+  port: 22
+SWUGEGV91:
+  hostname: 10.108.129.44
+  platform: ios
+  port: 22
+SWUGEGV92:
+  hostname: 10.108.129.82
+  platform: ios
+  port: 22
+SWUGEGVL1:
+  hostname: 10.108.129.30
+  platform: ios
+  port: 22
+SWUGEGVL2:
+  hostname: 10.108.129.88
+  platform: ios
+  port: 22
+SWUGEGVR1:
+  hostname: 10.108.129.31
+  platform: ios
+  port: 22
+SWUGKGLA1:
+  hostname: 10.108.129.54
+  platform: ios
+  port: 22
+SWUGKGMA1:
+  hostname: 10.108.129.32
+  platform: ios
+  port: 22
+SWUGKGVK11:
+  hostname: 10.108.129.50
+  platform: ios
+  port: 22
+SWUGKGVK12:
+  hostname: 10.108.129.59
+  platform: ios
+  port: 22
+SWUGOG1IBST2:
+  hostname: 10.108.129.56
+  platform: ios
+  port: 22
+SWUGOG1IBST3:
+  hostname: 10.108.129.80
+  platform: ios
+  port: 22
+SWUGOG1V1231:
+  hostname: 10.108.129.21
+  platform: ios
+  port: 22
+SWUGOG1V1232:
+  hostname: 10.108.129.53
+  platform: ios
+  port: 22
+SWUGOG1V1233:
+  hostname: 10.108.129.77
+  platform: ios
+  port: 22
+SWUGOG1V1234:
+  hostname: 10.108.129.52
+  platform: ios
+  port: 22
+SWUGOG1V1251:
+  hostname: 10.108.129.22
+  platform: ios
+  port: 22
+SWUGRESERV1:
+  hostname: 10.108.129.86
+  platform: ios
+  port: 22
+SWUGRESERV2:
+  hostname: 10.108.129.87
+  platform: ios
+  port: 22
+SWUGVPD1:
+  hostname: 10.108.129.81
+  platform: ios
+  port: 22

@@ -1,1 +1,7 @@
 Logs/
+config/
+IdentyGroups/
+config.yaml
+ssh_config
+ssh_config backup
+ssh_config

@@ -17,7 +17,7 @@ def load_yaml(file_path):
 myMAC = []
 
 # Define the correct Core Switch
-coreswitch = "SWUM0001"
+coreswitch = "SWLG0001"
 
 nr = InitNornir(config_file="config.yaml")
 nr = nr.filter(name=coreswitch)
@@ -40,7 +40,7 @@ for mac_info in mac_table:
 
 
 # Laden der Identy Groups aus einem yaml file
-file_path = 'IdentyGroups/UM_IdentyGroups.yaml'  # Passe den Dateipfad entsprechend an
+file_path = 'IdentyGroups/UG_IdentyGroups.yaml'  # Passe den Dateipfad entsprechend an
 data = load_yaml(file_path)
 if data is None:
     print(json.dumps(data, indent=3))
@@ -69,5 +69,5 @@ with open('import_mab.csv', mode='w', newline='') as csv_file:
             continue
         row["IdentityGroup"] = data[mac_info["vlan"]]["identy_group"]
         print (row)
-        #print ("end of raw")
+        print ("end of raw")
         writer.writerow(row)

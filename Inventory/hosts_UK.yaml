@@ -1,0 +1,108 @@
+SWUKEGVTH012:
+  hostname: 10.208.60.14
+  platform: ios
+  port: 22
+SWUKEGVTH013:
+  hostname: 10.208.60.27
+  platform: ios
+  port: 22
+SWUKEGVTH014:
+  hostname: 10.208.60.34
+  platform: ios
+  port: 22
+SWUKEGVTH033:
+  hostname: 10.208.60.35
+  platform: ios
+  port: 22
+SWUKEGVTH034:
+  hostname: 10.208.60.46
+  platform: ios
+  port: 22
+SWUKEGVTH31:
+  hostname: 10.208.60.23
+  platform: ios
+  port: 22
+SWUKKG1VTH022:
+  hostname: 10.208.60.30
+  platform: ios
+  port: 22
+SWUKKG1VTH023:
+  hostname: 10.208.60.28
+  platform: ios
+  port: 22
+SWUKKG1VTN012:
+  hostname: 10.208.60.29
+  platform: ios
+  port: 22
+SWUKOG1VTH011:
+  hostname: 10.208.60.17
+  platform: ios
+  port: 22
+SWUKOG1VTH012:
+  hostname: 10.208.60.18
+  platform: ios
+  port: 22
+SWUKOG1VTH014:
+  hostname: 10.208.60.36
+  platform: ios
+  port: 22
+SWUKOG1VTH022:
+  hostname: 10.208.60.20
+  platform: ios
+  port: 22
+SWUKOG1VTH023:
+  hostname: 10.208.60.37
+  platform: ios
+  port: 22
+SWUKOG1VTH024:
+  hostname: 10.208.60.45
+  platform: ios
+  port: 22
+SWUKOG1VTH031:
+  hostname: 10.208.60.21
+  platform: ios
+  port: 22
+SWUKOG1VTH033:
+  hostname: 10.208.60.38
+  platform: ios
+  port: 22
+SWUKOG1VTH041:
+  hostname: 10.208.60.43
+  platform: ios
+  port: 22
+SWUKOG1VTH042:
+  hostname: 10.208.60.44
+  platform: ios
+  port: 22
+SWUKOG1VTH34:
+  hostname: 10.208.60.25
+  platform: ios
+  port: 22
+SWUKOG2VTH012:
+  hostname: 10.208.60.39
+  platform: ios
+  port: 22
+SWUKOG2VTH013:
+  hostname: 10.208.60.12
+  platform: ios
+  port: 22
+SWUKOG2VTH014:
+  hostname: 10.208.60.19
+  platform: ios
+  port: 22
+SWUKOG2VTH023:
+  hostname: 10.208.60.26
+  platform: ios
+  port: 22
+SWUKOG2VTH024:
+  hostname: 10.208.60.31
+  platform: ios
+  port: 22
+SWUKOG3VTH032:
+  hostname: 10.208.60.41
+  platform: ios
+  port: 22
+SWUKOG3VTH033:
+  hostname: 10.208.60.13
+  platform: ios
+  port: 22

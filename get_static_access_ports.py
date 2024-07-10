@@ -1,48 +1,36 @@
 from nornir import InitNornir
 from nornir_napalm.plugins.tasks import napalm_get
 from nornir_napalm.plugins.tasks.napalm_configure import napalm_configure
-#from nornir_netmiko.tasks import netmiko_send_config
-from nornir_netmiko import netmiko_send_command, netmiko_send_config, netmiko_save_config, netmiko_multiline
-from ttp import ttp
-#from nornir.plugins.tasks import commands
+from nornir_netmiko import netmiko_send_command, netmiko_send_config
 from nornir_utils.plugins.functions import print_result
-#from nornir.plugins.functions.text import print_result
-#from nornir.plugins.tasks.networking import napalm_get
-#from nornir.plugins.tasks.networking import netmiko_send_command
-#from nornir.plugins.tasks.networking.netmiko_send_config import netmiko_send_config
 from nornir.core.task import Task, Result
-from netmiko import ConnectHandler
-import csv
-import os
-import pprint
-import json
 import sys
-import time
 import yaml
 
 
-def global_config(task, config):
 
-    with open(config, 'r') as file:
-        config_lines = file.readlines()
+def get_static_access_ports(task):
+    r = task.run(task=netmiko_send_command, name="get parsed data from \"sh interface description\"", command_string="sh interfaces description", use_textfsm=True)
+    host=str(task.host)
+    intf_dict = r.result
 
-    r = task.run(netmiko_send_config, name='Set Global Config via Configfile', config_file=config, read_timeout=10)
-    print_result(r)
+    # get access ports
+    intf_list = []
+    for intf_info in intf_dict:
 
-def global_config_multiline(task, config):
-
-    with open(config, 'r') as file:
-        config_lines = file.readlines()
+        # check for non-access ports
+        if "Vl" in intf_info["port"] or  "Gi0" in intf_info["port"] or "Gi1/1" in intf_info["port"] or "Po" in intf_info["port"] or "Ap" in intf_info["port"]:
+            continue
+        
+        # identify dot1x disables ports
+        if '***STATIC***' in intf_info['descrip']:
+            print(f"{host}: Interface: {intf_info['port']} is DOT1X DISABLED")
+            intf_list.append(intf_info["port"])
     
-    print (config_lines)
+    return Result(task.host, intf_list)
+    
 
-    r = task.run(netmiko_multiline, name='Set Global Config via multiline commands', commands=config_lines)
-    print_result(r)
 
-def global_command(task, command):
-
-    r = task.run(netmiko_send_command, name='Send command', command_string = command)
-    print_result(r)
 
 class Logger:
 
@@ -75,32 +63,31 @@ def update_config_yaml(path_inventory_file):
 #==============================================================================  
 
 # write output stream to file
-path = './Logs/global_config.txt'
+path = './Logs/get_static_access_ports.txt'
 sys.stdout = Logger(path)
 
+# Define Voice Vlanid
+voice_vlanid = [148]
+
 # Pfad zum Inventory File
-path_inventory_file = 'Inventory/hosts_LG.yaml'  # Passe den Dateipfad entsprechend an
+path_inventory_file = 'Inventory/hosts_UM.yaml'  # Passe den Dateipfad entsprechend an
 update_config_yaml(path_inventory_file)
+
+
 # init Nornir Object
 nr = InitNornir(config_file="config.yaml")
 #hosts = nr.filter(dot1x="yes") # use only hosts where "data: dot1x: yes" is set in Host Inventory File!
-#nr = nr.filter(hostname="10.108.240.48")
-#filtered_hosts = nr.filter(lambda h: h.name.startswith("SWRWLT011") and h.site == "Wien")
-#nr = nr.filter(lambda host: "SWUG04V12" in host.name)
-
+#nr = nr.filter(hostname="SWUSOG4VH12")
+#nr = nr.filter(lambda host: "KGVH21" in host.name)
 hosts = nr.inventory.hosts
-for host in hosts:
-    print (host)
+print (hosts)
 
-# define the confing file which will be applied
-#command = "ip scp server enable"
-#results_global = nr.run(task=global_command, command=command)
-results_global = nr.run(task=global_config, config="config/PSN3.cfg")
-print_result(results_global)
 
+result_get_miniswitch = nr.run(task=get_static_access_ports)
+#print_result(result_get_miniswitch)
 
 failed_hosts = []
-for host, result in results_global.items():
+for host, result in result_get_miniswitch.items():
     if result.failed:
         print(f"Task failed on host {host}: {result}")
         failed_hosts.append(host)
@@ -111,5 +98,4 @@ print ("\n")
 print('The Task failed on the following Hosts:')
 print('--------------------------------------------')
 print (failed_hosts)
-
 

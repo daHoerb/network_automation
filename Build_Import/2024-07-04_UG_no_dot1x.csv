@@ -1,0 +1,48 @@
+MACAddress,ip,NAS-IP-Address,NAS-Port-Id,Description,OUI,FailureReason,Vlan-ID
+00:D8:61:4A:5D:C9,10.108.215.181,SWUGKGMA1,GigabitEthernet1/0/8,PCUGEMS3 / 1K142/C9,"Micro-Star INTL CO., LTD.",15039 Rejected per authorization profile,114
+00:D8:61:62:6E:71,10.108.215.192,SWUG02V11,GigabitEthernet1/0/10,PCUGDS01/ 2.30/C5,"Micro-Star INTL CO., LTD.",15039 Rejected per authorization profile,114
+2C:F0:5D:10:C1:8A,10.108.214.154,SWUGEGH14,GigabitEthernet1/0/11,PCUGEU06 / E233/C1,"Micro-Star INTL CO., LTD.",15039 Rejected per authorization profile,114
+00:D8:61:62:64:9D,10.108.214.203,SWUGOG1V1251,GigabitEthernet1/0/12,PCUGAN02 / 0247/C3,"Micro-Star INTL CO., LTD.",15039 Rejected per authorization profile,114
+00:D8:61:62:6D:B7,10.108.214.213,SWUGKGVK11,GigabitEthernet1/0/1,PCUGFPU1 / 1K176/C1,"Micro-Star INTL CO., LTD.",15039 Rejected per authorization profile,114
+2C:F0:5D:10:C0:4E,10.108.215.116,SWUGOG1V1251,GigabitEthernet1/0/17,Schulungsraum Boden / 0248/C8,"Micro-Star INTL CO., LTD.",15039 Rejected per authorization profile,114
+2C:F0:5D:10:C1:30,10.108.214.42,SWUGKGMA1,GigabitEthernet1/0/3,PCUGARC1 / 1K142/C15,"Micro-Star INTL CO., LTD.",15039 Rejected per authorization profile,114
+00:D8:61:F4:4E:32,10.108.214.137,SWUGKGVK11,GigabitEthernet1/0/8,PCUGREI3 + 43833 / 1K5/C3,"Micro-Star INTL CO., LTD.",15039 Rejected per authorization profile,114
+6C:4B:90:E3:7D:76,10.108.214.160,SWUGEGEZ1,GigabitEthernet1/0/3,***DOT1X*** VLAN: 112 User: 00-1A-E8-08-5C-25 Domain: VOICE +++,LiteON,15039 Rejected per authorization profile,114
+2C:F0:5D:10:C1:0A,10.108.214.79,SWUG01V11,GigabitEthernet1/0/7,***DOT1X*** VLAN: 112 User: 00-1A-E8-08-59-F5 Domain: VOICE +++,"Micro-Star INTL CO., LTD.",15039 Rejected per authorization profile,114
+04:7C:16:92:AA:59,10.108.215.182,SWUG01V11,GigabitEthernet1/0/36,***DOT1X*** INACTIVE,UNKNOWN,15039 Rejected per authorization profile,114
+00:40:42:03:6C:EE,10.108.208.12,SWUGKGVK11,GigabitEthernet1/0/21,Server DAKS 10.108.208.12 / B8/5,N.A.T. GMBH,15039 Rejected per authorization profile,108
+00:D8:61:62:6F:87,10.108.214.226,SWUGOG1IBST3,GigabitEthernet1/0/8,PCUGCPZ2 / E215/C22,"Micro-Star INTL CO., LTD.",15039 Rejected per authorization profile,114
+2C:F0:5D:10:C1:AC,10.108.214.30,SWUGEGH14,GigabitEthernet1/0/7,***DOT1X*** VLAN: 112 User: 00-1A-E8-08-5C-2D Domain: VOICE +++,"Micro-Star INTL CO., LTD.",15039 Rejected per authorization profile,114
+6C:4B:90:E3:7D:00,10.108.214.80,SWUG01V11,GigabitEthernet1/0/2,***DOT1X***,LiteON,15039 Rejected per authorization profile,114
+00:D8:61:4A:5F:A0,10.108.214.129,SWUGOG1V1234,GigabitEthernet1/0/11,***DOT1X*** VLAN: 112 User: 00-1A-E8-08-5A-09 Domain: VOICE +++,"Micro-Star INTL CO., LTD.",15039 Rejected per authorization profile,114
+6C:4B:90:E3:84:48,10.108.215.176,SWUGOG1V1251,GigabitEthernet1/0/45,PCUGFOT2 / 0246/C8,LiteON,15039 Rejected per authorization profile,114
+2C:F0:5D:10:C0:55,10.108.214.104,SWUGEGH14,GigabitEthernet1/0/2,PCUGAMB3 / E217/C1,"Micro-Star INTL CO., LTD.",15039 Rejected per authorization profile,114
+30:9C:23:75:AF:F5,10.108.214.105,SWUGEGH11,GigabitEthernet1/0/3,***DOT1X*** VLAN: 112 User: 00-1A-E8-96-0D-EA Domain: VOICE +++,"Micro-Star INTL CO., LTD.",15039 Rejected per authorization profile,114
+2C:F0:5D:10:BF:BA,10.108.214.61,SWUGEGH14,GigabitEthernet1/0/9,PCUGEU04+43561 / E230/C16,"Micro-Star INTL CO., LTD.",15039 Rejected per authorization profile,114
+00:D8:61:62:6E:07,10.108.214.86,SWUG04V12,GigabitEthernet1/0/9,PCUGVL02 / 4.21/C2,"Micro-Star INTL CO., LTD.",15039 Rejected per authorization profile,114
+70:20:84:0C:DE:F9,10.108.215.162,SWUGOG1V1232,GigabitEthernet1/0/3,PCUGAN03 / E135/C13,"Hon Hai Precision Ind. Co., Ltd.",15039 Rejected per authorization profile,114
+2C:F0:5D:10:C0:15,10.108.214.59,SWUGEGRO3,GigabitEthernet1/0/5,PCUGRO02 / E239/C32,"Micro-Star INTL CO., LTD.",15039 Rejected per authorization profile,114
+28:00:AF:AD:5B:71,10.108.214.28,SWUG02V11,GigabitEthernet1/0/15,***DOT1X*** VLAN: 112 User: 00-1A-E8-08-5C-1C Domain: VOICE +++,UNKNOWN,15039 Rejected per authorization profile,114
+00:D8:61:62:67:B1,10.108.214.22,SWUGKGMA1,GigabitEthernet1/0/1,***DOT1X*** VLAN: 112 User: 00-1A-E8-08-5A-07 Domain: VOICE +++,"Micro-Star INTL CO., LTD.",15039 Rejected per authorization profile,114
+00:D8:61:F4:4E:25,10.108.214.25,SWUGKGMA1,GigabitEthernet1/0/13,***DOT1X*** VLAN: 112 User: 00-1A-E8-08-5A-F7 Domain: VOICE +++,"Micro-Star INTL CO., LTD.",15039 Rejected per authorization profile,114
+2C:F0:5D:10:C1:2D,10.108.215.136,SWUGOG1IBST3,GigabitEthernet1/0/24,PCUGCPZ1 / E216/C11,"Micro-Star INTL CO., LTD.",15039 Rejected per authorization profile,114
+6C:4B:90:E3:7D:69,10.108.215.135,SWUGEGH11,GigabitEthernet1/0/23,PCUGWVL1 / E202/C3,LiteON,15039 Rejected per authorization profile,114
+74:46:A0:A8:D6:B0,10.108.214.210,SWUGEGH14,GigabitEthernet1/0/15,PCUGINF3 / E115/C4,Hewlett Packard,15039 Rejected per authorization profile,114
+04:7C:16:1F:46:3F,10.108.215.110,SWUG02V11,GigabitEthernet1/0/21,PCUGKS64 / 2.52/C5,UNKNOWN,15039 Rejected per authorization profile,114
+00:D8:61:F4:4C:BB,10.108.215.44,SWUG04V11,GigabitEthernet1/0/12,PCUGAD01 / 4.15/C6,"Micro-Star INTL CO., LTD.",15039 Rejected per authorization profile,114
+04:7C:16:1F:45:F2,10.108.215.100,SWUG01V11,GigabitEthernet1/0/17,***DOT1X***,UNKNOWN,15039 Rejected per authorization profile,114
+2C:F0:5D:10:C1:0B,10.108.214.47,SWUGEGH11,GigabitEthernet1/0/2,***DOT1X*** VLAN: 112 User: 00-1A-E8-94-D8-67 Domain: VOICE +++,"Micro-Star INTL CO., LTD.",15039 Rejected per authorization profile,114
+00:D8:61:62:6F:8C,10.108.215.76,SWUGEGH11,GigabitEthernet1/0/1,PCUGSEL1 / E203/C3,"Micro-Star INTL CO., LTD.",15039 Rejected per authorization profile,114
+00:D8:61:F4:4E:1D,10.108.214.199,SWUGOG1V1234,GigabitEthernet1/0/28,***DOT1X*** VLAN: 112 User: 00-1A-E8-08-5A-03 Domain: VOICE +++,"Micro-Star INTL CO., LTD.",15039 Rejected per authorization profile,114
+00:D8:61:62:68:12,10.108.214.3,SWUGKGMA1,GigabitEthernet1/0/4,PCUGMV03 / 1K142/C5,"Micro-Star INTL CO., LTD.",15039 Rejected per authorization profile,114
+04:7C:16:92:AA:55,10.108.215.184,SWUG02V11,GigabitEthernet1/0/47,PCUGKSM5 / 2.40/C3,UNKNOWN,15039 Rejected per authorization profile,114
+6C:4B:90:E3:83:29,10.108.214.68,SWUG01V11,GigabitEthernet1/0/6,***DOT1X*** VLAN: 112 User: 00-1A-E8-08-5A-47 Domain: VOICE +++,LiteON,15039 Rejected per authorization profile,114
+2C:F0:5D:10:C1:38,10.108.214.100,SWUGEGH11,GigabitEthernet1/0/32,PCUGEA01 / E266a/C10,"Micro-Star INTL CO., LTD.",15039 Rejected per authorization profile,114
+2C:F0:5D:10:C1:5D,10.108.214.228,SWUGOG1IBST3,GigabitEthernet1/0/12,PCUGCPZ5 / E212/C29,"Micro-Star INTL CO., LTD.",15039 Rejected per authorization profile,114
+2C:F0:5D:10:C1:0D,10.108.214.201,SWUG01V11,GigabitEthernet1/0/4,***DOT1X*** INACTIVE,"Micro-Star INTL CO., LTD.",15039 Rejected per authorization profile,114
+10:65:30:A7:AD:BA,10.108.214.242,SWUGEGH14,GigabitEthernet1/0/4,PCUGVER2 / E215/C19,Dell Inc.,15039 Rejected per authorization profile,114
+2C:F0:5D:10:C1:65,10.108.214.49,SWUGEGH14,GigabitEthernet1/0/8,PCUGEU01 / E230/C12,"Micro-Star INTL CO., LTD.",15039 Rejected per authorization profile,114
+04:7C:16:92:CC:7B,10.108.215.163,SWUGEGH12,GigabitEthernet1/0/11,PCUGNF01 / E232A/C5,UNKNOWN,15039 Rejected per authorization profile,114
+2C:F0:5D:10:C0:52,10.108.214.103,SWUGEGH12,GigabitEthernet1/0/21,PCUGINF2/ E116/C05,"Micro-Star INTL CO., LTD.",15039 Rejected per authorization profile,114
+8C:47:BE:43:EF:7E,10.108.214.252,SWUGKGVK12,GigabitEthernet1/0/2,***DOT1X*** VLAN: 112 User: 00-1A-E8-08-58-D7 Domain: VOICE +++,Dell Inc.,15039 Rejected per authorization profile,114
+00:D8:61:62:66:9D,10.108.214.207,SWUGKGVK11,GigabitEthernet1/0/22,3504 / 1K7/C2,"Micro-Star INTL CO., LTD.",15039 Rejected per authorization profile,114

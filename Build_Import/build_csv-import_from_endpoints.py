@@ -6,6 +6,7 @@ import json
 from nornir_netmiko import netmiko_send_command, netmiko_send_config, netmiko_save_config
 from ttp import ttp
 from nornir_utils.plugins.functions import print_result
+import os
 
 
         
@@ -92,6 +93,7 @@ def load_yaml(file_path):
 
 # Laden des Inventory aus einem yaml file
 def load_inventory(file_path):
+
     data_inventory = load_yaml(file_path)
     if data_inventory is None:
         print(json.dumps(data_inventory, indent=3))
@@ -110,7 +112,7 @@ def load_identy(file_path):
         return None
     else:
         print (f'Loading {file_path} succesful')
-        print(json.dumps(data_identygroup, indent=3))
+        #print(json.dumps(data_identygroup, indent=3))
         return data_identygroup
 
 
@@ -187,14 +189,14 @@ def write_no_dot1x_file(export_no_dot1x_file):
             
             
             newline = dict(row)
-            print (newline)
+            #print (newline)
 
                 
             newline['Vlan-ID'] = mac2vlanid(newline['MACAddress'])
-            print (newline['Vlan-ID'])
+            #print (newline['Vlan-ID'])
                    
             if vlan2identygroup((newline['Vlan-ID'])) == False:
-                print (f"There is no Idendity Group to this MAC found: {newline['MACAddress']} False")
+                #print (f"There is no Idendity Group to this MAC found: {newline['MACAddress']} False")
                 #newline['Description'] = mac2description(row['MACAddress'])
                 #newline['Vlan-ID'] = mac2vlanid(row['MACAddress'])
                 
@@ -202,7 +204,7 @@ def write_no_dot1x_file(export_no_dot1x_file):
                 line_count = line_count + 1
 
             if vlan2identygroup((newline['Vlan-ID'])) == None:
-                print (f"There is no Idendity Group to this MAC found: {newline['MACAddress']} None")
+                #print (f"There is no Idendity Group to this MAC found: {newline['MACAddress']} None")
                 newline['Description'] = mac2description(row['MACAddress'])
                     
                 writer.writerow(newline)
@@ -231,11 +233,21 @@ def update_config_yaml(inventory_file):
 # Global variables
 list = []
 dict2writeFile = []
-import_file = "converted_profiler_endpoints.csv" # Passe den Pfad entsprechend an
-inventory_file = '../Inventory/hosts_US.yaml'  # Passe den Dateipfad entsprechend an
-identy_file = '../IdentyGroups/US_IdentyGroups.yaml'  # Passe den Dateipfad entsprechend an
-export_mab_file = "import_mab.csv" # Passe den Dateipfad entsprechend an
-export_no_dot1x_file = "no_dot1x.csv" # Passe den Dateipfad entsprechend an
+import_file = "Build_Import/converted_profiler_endpoints.csv" # Passe den Pfad entsprechend an
+inventory_file = 'Inventory/hosts_LG.yaml'  # Passe den Dateipfad entsprechend an
+identy_file = 'IdentyGroups/UG_IdentyGroups.yaml'  # Passe den Dateipfad entsprechend an
+export_mab_file = "Build_Import/import_mab.csv" # Passe den Dateipfad entsprechend an
+export_no_dot1x_file = "Build_Import/no_dot1x.csv" # Passe den Dateipfad entsprechend an
+
+# Aktuellen Verzeichnispfad speichern
+original_directory = os.getcwd()
+print("Original Verzeichnis: ", os.getcwd())
+
+# In das übergeordnete Verzeichnis wechseln
+os.chdir(os.path.abspath(os.path.join(original_directory, os.pardir)))
+
+# Jetzt sind wir im übergeordneten Verzeichnis
+print("Aktuelles Verzeichnis nach Wechsel:", os.getcwd())
 
 # Update config.yaml file
 update_config_yaml(inventory_file)
@@ -268,8 +280,8 @@ print (filtered_hosts.inventory.hosts)
 results = filtered_hosts.run(task=get_intf_vlan_fom_switch)
 
 #print_result(results)
-print ('dict2writeFile')
-print (dict2writeFile)
+#print ('dict2writeFile')
+#print (dict2writeFile)
 
 
 failed_hosts = []
@@ -285,6 +297,7 @@ print ("\n")
 print('The Task failed on the following Hosts:')
 print('--------------------------------------------')
 print (failed_hosts)
+
 
 
 # create file for import

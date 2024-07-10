@@ -108,13 +108,13 @@ path = './Logs/access_config_output.txt'
 sys.stdout = Logger(path)
 
 # Pfad zum Inventory File
-path_inventory_file = 'Inventory/hosts_UM.yaml'  # Passe den Dateipfad entsprechend an
+path_inventory_file = 'Inventory/hosts_UO.yaml'  # Passe den Dateipfad entsprechend an
 update_config_yaml(path_inventory_file)
 
 # init Nornir Object
 nr = InitNornir(config_file="config.yaml")
 #hosts = nr.filter(dot1x="yes") # use only hosts where "data: dot1x: yes" is set in Host Inventory File!
-#nr = nr.filter(lambda host: "EGVH12" in host.name)
+nr = nr.filter(lambda host: "OG" in host.name)
 #filtered_hosts = nr.filter(lambda h: h.name.startswith("sw") and h.site == "Wien")
 
 hosts = nr.inventory.hosts
@@ -122,7 +122,7 @@ for host in hosts:
     print (host)
 
 
-results_intf_access = nr.run(task=interface_access_config, config_file="config/voice_vlan.cfg")
+results_intf_access = nr.run(task=interface_access_config, config_file="config/access_config.cfg")
 print_result(results_intf_access)
 
 

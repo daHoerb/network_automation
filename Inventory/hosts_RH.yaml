@@ -1,0 +1,173 @@
+
+SWRHAEG11:
+  hostname: 10.108.192.44
+  platform: ios
+  port: 22
+SWRHAO111:
+  hostname: 10.108.192.45
+  platform: ios
+  port: 22
+SWRHAO112:
+  hostname: 10.108.192.46
+  platform: ios
+  port: 22
+SWRHAO113:
+  hostname: 10.108.192.38
+  platform: ios
+  port: 22
+SWRHAO211:
+  hostname: 10.108.192.47
+  platform: ios
+  port: 22
+SWRHAO212:
+  hostname: 10.108.192.48
+  platform: ios
+  port: 22
+SWRHAO213:
+  hostname: 10.108.192.57
+  platform: ios
+  port: 22
+SWRHAO311:
+  hostname: 10.108.192.49
+  platform: ios
+  port: 22
+SWRHAO312:
+  hostname: 10.108.192.50
+  platform: ios
+  port: 22
+SWRHAO313:
+  hostname: 10.108.192.14
+  platform: ios
+  port: 22
+SWRHAO411:
+  hostname: 10.108.192.51
+  platform: ios
+  port: 22
+SWRHAO412:
+  hostname: 10.108.192.52
+  platform: ios
+  port: 22
+SWRHAO413:
+  hostname: 10.108.192.35
+  platform: ios
+  port: 22
+SWRHAO511:
+  hostname: 10.108.192.53
+  platform: ios
+  port: 22
+SWRHAO512:
+  hostname: 10.108.192.54
+  platform: ios
+  port: 22
+SWRHAO513:
+  hostname: 10.108.192.28
+  platform: ios
+  port: 22
+SWRHBEG11:
+  hostname: 10.108.192.58
+  platform: ios
+  port: 22
+SWRHBEG12:
+  hostname: 10.108.192.39
+  platform: ios
+  port: 22
+SWRHBEG13:
+  hostname: 10.108.192.20
+  platform: ios
+  port: 22
+SWRHBO111:
+  hostname: 10.108.192.40
+  platform: ios
+  port: 22
+SWRHBO112:
+  hostname: 10.108.192.43
+  platform: ios
+  port: 22
+SWRHBO121:
+  hostname: 10.108.192.42
+  platform: ios
+  port: 22
+SWRHBO122:
+  hostname: 10.108.192.41
+  platform: ios
+  port: 22
+SWRHBU111:
+  hostname: 10.108.192.36
+  platform: ios
+  port: 22
+SWRHBU112:
+  hostname: 10.108.192.21
+  platform: ios
+  port: 22
+SWRHCEG11:
+  hostname: 10.108.192.12
+  platform: ios
+  port: 22
+SWRHCEG12:
+  hostname: 10.108.192.13
+  platform: ios
+  port: 22
+SWRHCEG21:
+  hostname: 10.108.192.10
+  platform: ios
+  port: 22
+SWRHCEG22:
+  hostname: 10.108.192.11
+  platform: ios
+  port: 22
+SWRHCO111:
+  hostname: 10.108.192.22
+  platform: ios
+  port: 22
+SWRHCO112:
+  hostname: 10.108.192.23
+  platform: ios
+  port: 22
+SWRHCU101:
+  hostname: 10.108.192.32
+  platform: ios
+  port: 22
+SWRHCU102:
+  hostname: 10.108.192.18
+  platform: ios
+  port: 22
+SWRHCU111:
+  hostname: 10.108.192.31
+  platform: ios
+  port: 22
+SWRHCU121:
+  hostname: 10.108.192.19
+  platform: ios
+  port: 22
+SWRHDEG11:
+  hostname: 10.108.192.15
+  platform: ios
+  port: 22
+SWRHDEG12:
+  hostname: 10.108.192.16
+  platform: ios
+  port: 22
+SWRHDEG13:
+  hostname: 10.108.192.17
+  platform: ios
+  port: 22
+SWRHDEG14:
+  hostname: 10.108.192.37
+  platform: ios
+  port: 22
+SWRHDEG21:
+  hostname: 10.108.192.24
+  platform: ios
+  port: 22
+SWRHGEG11:
+  hostname: 10.108.192.30
+  platform: ios
+  port: 22
+SWRHWO211:
+  hostname: 10.108.192.26
+  platform: ios
+  port: 22
+SWRHWO311:
+  hostname: 10.108.192.29
+  platform: ios
+  port: 22

@@ -22,10 +22,10 @@ def load_yaml(file_path):
 
 # Definiere die Dateien, die kopiert werden sollen
 #source_file = "C:\\Users\\hdinnobl\\Desktop\\SecureCRT\\Config\\Sessions\\AUVA\\UK\\SWUK0001.ini"
-file_path = 'Inventory/hosts_US.yaml'  # Passe den Dateipfad entsprechend an
-host_copy = "SWUS0001"
-ip_copy = "10.108.128.254"
-source_file = f"/Users/hdinnobl/Library/Application Support/VanDyke/SecureCRT/Config/Sessions/AUVA/US/{host_copy}.ini"
+file_path = 'Inventory/hosts_UB.yaml'  # Passe den Dateipfad entsprechend an
+host_copy = "SWUB0001"
+ip_copy = "10.108.95.254"
+source_file = f"/Users/hdinnobl/Library/Application Support/VanDyke/SecureCRT/Config/Sessions/AUVA/UB/{host_copy}.ini"
 
 data_inventory = load_yaml(file_path)
 
@@ -37,7 +37,7 @@ else:
 
 for host, item in data_inventory.items():
     ip = (item['hostname'])
-    destination_file = f"/Users/hdinnobl/Library/Application Support/VanDyke/SecureCRT/Config/Sessions/AUVA/US/{host}.ini"
+    destination_file = f"/Users/hdinnobl/Library/Application Support/VanDyke/SecureCRT/Config/Sessions/AUVA/UB/{host}.ini"
     print (destination_file)
     
     # Kopiere die Datei von der Quelle zum Ziel

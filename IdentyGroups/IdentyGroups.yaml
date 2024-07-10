@@ -1,5 +1,34 @@
-53: 
-    vlan_name: Zutritt
-    identy_group: MAB_RH_Zutritt
-    authorization_profile: Zutritt
+28: 
+    vlan_name: FM
+    identy_group: MAB_UO_FM
+    authorization_profile: MAB_UO_FM
 
+28: 
+    vlan_name: FM
+    identy_group: MAB_UO_FM
+    authorization_profile: MAB_UO_FM
+
+29: 
+    vlan_name: TK2_UO
+    identy_group: MAB_UO_TK2
+    authorization_profile: MAB_UO_TK2
+
+34: 
+    vlan_name: FM
+    identy_group: MAB_UO_FM
+    authorization_profile: MAB_UO_FM
+
+28: 
+    vlan_name: FM
+    identy_group: MAB_UO_FM
+    authorization_profile: MAB_UO_FM
+
+28: 
+    vlan_name: FM
+    identy_group: MAB_UO_FM
+    authorization_profile: MAB_UO_FM
+
+28: 
+    vlan_name: FM
+    identy_group: MAB_UO_FM
+    authorization_profile: MAB_UO_FM

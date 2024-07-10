@@ -3,7 +3,7 @@ import yaml
 import json
 
 import_file = "profiler_endpoints.csv"
-file_path = '../Inventory/hosts_US.yaml'  # Passe den Dateipfad entsprechend an
+file_path = '../Inventory/hosts_LG.yaml'  # Passe den Dateipfad entsprechend an
 dict = []
 
 

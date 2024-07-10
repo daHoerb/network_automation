@@ -153,14 +153,14 @@ path = './Logs/int_dot1x_monitor_output.txt'
 sys.stdout = Logger(path)
 
 # Pfad zum Inventory File
-path_inventory_file = 'Inventory/hosts_UM.yaml'  # Passe den Dateipfad entsprechend an
+path_inventory_file = 'Inventory/hosts_UG.yaml'  # Passe den Dateipfad entsprechend an
 update_config_yaml(path_inventory_file)
 
 # init Nornir Object
 nr = InitNornir(config_file="config.yaml")
 #hosts = nr.filter(dot1x="yes") # use only hosts where "data: dot1x: yes" is set in Host Inventory File!
 #nr = nr.filter(hostname="SWUSOG4VH12")
-nr = nr.filter(lambda host: "111" in host.name)
+nr = nr.filter(lambda host: "SWUG02V11" in host.name)
 hosts = nr.inventory.hosts
 print (hosts)
 

@@ -1,0 +1,6 @@
+{'SWRHDEG21': Host: SWRHDEG21}
+AggregatedResult (check_connection): {'SWRHDEG21': MultiResult: [Result: "check_connection", Result: "check connections to host"]}
+Task failed on host SWRHDEG21: MultiResult: [Result: "check_connection", Result: "check connections to host"]
+The following Hosts are not able to connect:
+--------------------------------------------
+['SWRHDEG21']

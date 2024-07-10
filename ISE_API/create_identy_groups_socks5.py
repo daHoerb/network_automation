@@ -1,6 +1,8 @@
 import yaml
 import json
 import requests
+import socks
+import socket
 from decouple import config
 
 
@@ -29,21 +31,12 @@ def get_identity_groups(api_base_url, username, password):
     # Authentifizierung mit Benutzername und Passwort
     auth = (username, password)
 
-    # Proxy-Konfiguration mit Authentifizierung
-    proxies = {
-        'http': f'http://{proxy_username}:{proxy_password}@{proxy_host}:{proxy_port}',
-        'https': f'https://{proxy_username}:{proxy_password}@{proxy_host}:{proxy_port}'
-    } 
-
-    print (proxies)
-    print (proxy_port)
-#        'http': f'http://{proxy_username}:{proxy_password}@{proxy_host}:{proxy_port}',
     try:
 
         identity_groups = []
         while url:
             # HTTP GET-Anfrage senden mit Proxy-Konfiguration
-            response = requests.get(url, headers=headers, auth=auth, proxies=proxies, verify=False)
+            response = requests.get(url, headers=headers, auth=auth, verify=False)
         
             # Überprüfen, ob die Anfrage erfolgreich war
             if response.status_code == 200:
@@ -85,18 +78,12 @@ def get_authentication_profiles(api_base_url):
     # Authentifizierung mit Benutzername und Passwort
     auth = (username, password)
 
-    # Proxy-Konfiguration mit Authentifizierung
-    proxies = {
-        #'http': f'http://{proxy_username}:{proxy_password}@{proxy_host}:{proxy_port}',
-        'https': f'https://{proxy_username}:{proxy_password}@{proxy_host}:{proxy_port}'
-    } 
-
     try:
 
         authentication_profiles = []
         while url:
             # HTTP GET-Anfrage senden mit Proxy-Konfiguration
-            response = requests.get(url, headers=headers, auth=auth, proxies=proxies, verify=False)
+            response = requests.get(url, headers=headers, auth=auth, verify=False)
         
             # Überprüfen, ob die Anfrage erfolgreich war
             if response.status_code == 200:
@@ -140,11 +127,7 @@ def pushIdentyGroups(api_base_url, name, description):
     # Authentifizierung mit Benutzername und Passwort
     auth = (username, password)
 
-    # Proxy-Konfiguration mit Authentifizierung
-    proxies = {
-        #'http': f'http://{proxy_username}:{proxy_password}@{proxy_host}:{proxy_port}',
-        'https': f'https://{proxy_username}:{proxy_password}@{proxy_host}:{proxy_port}'
-    }
+
     payload = json.dumps({
         "EndPointGroup": {
             "name": name,
@@ -153,7 +136,7 @@ def pushIdentyGroups(api_base_url, name, description):
     })
 
     try:
-        response = requests.post(url, headers=headers, auth=auth, proxies=proxies, data=payload, verify=False)
+        response = requests.post(url, headers=headers, auth=auth, data=payload, verify=False)
             
         # Überprüfen, ob die Anfrage erfolgreich war
         if response.status_code == 201:
@@ -180,11 +163,6 @@ def pushAuthenticationProfiles(api_base_url, name, description, vlan_id, voicedo
     # Authentifizierung mit Benutzername und Passwort
     auth = (username, password)
 
-    # Proxy-Konfiguration mit Authentifizierung
-    proxies = {
-        #'http': f'http://{proxy_username}:{proxy_password}@{proxy_host}:{proxy_port}',
-        'https': f'https://{proxy_username}:{proxy_password}@{proxy_host}:{proxy_port}'
-    }
     payload = json.dumps(
     {
         "AuthorizationProfile": {
@@ -206,7 +184,7 @@ def pushAuthenticationProfiles(api_base_url, name, description, vlan_id, voicedo
     print (payload)
 
     try:
-        response = requests.post(url, headers=headers, auth=auth, proxies=proxies, data=payload, verify=False)
+        response = requests.post(url, headers=headers, auth=auth, data=payload, verify=False)
             
         # Überprüfen, ob die Anfrage erfolgreich war
         if response.status_code == 201:
@@ -224,9 +202,13 @@ def pushAuthenticationProfiles(api_base_url, name, description, vlan_id, voicedo
 #==============================================================================  
 
 
+# Setze SOCKS5-Proxy-Einstellungen
+socks.setdefaultproxy(socks.PROXY_TYPE_SOCKS5, "127.0.0.1", 1084)
+socket.socket = socks.socksocket
+
 
 # Laden der Identy Groups auseinem yaml file
-file_path = '../IdentyGroups/AS_IdentyGroups.yaml'  # Passe den Dateipfad entsprechend an
+file_path = '../IdentyGroups/UG_IdentyGroups.yaml'  # Passe den Dateipfad entsprechend an
 data = load_yaml(file_path)
 if data is None:
     print(json.dumps(data, indent=3))
@@ -239,10 +221,7 @@ else:
 api_base_url = config("api_base_url")
 username = config("username")
 password = config("password")
-proxy_host = config("proxy_host")
-proxy_port =config("proxy_port")
-proxy_username = config("proxy_username")
-proxy_password = config("proxy_password")
+
 
 
 # Beispielaufruf 
@@ -263,6 +242,8 @@ authentication_profiles = get_authentication_profiles(api_base_url)
 # Neue Liste erstellen erstellen
 new_groups = []
 new_authorization_profiles = []
+
+print (data)
 
 for vlan_id, attribute  in data.items():
         new_groups.append(attribute['identy_group'])
