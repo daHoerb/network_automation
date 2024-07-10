@@ -1,0 +1,124 @@
+SWUB01071:
+  hostname: 10.108.95.199
+  platform: ios
+  port: 22
+SWUB01081:
+  hostname: 10.108.95.35
+  platform: ios
+  port: 22
+SWUB01GA1:
+  hostname: 10.108.95.30
+  platform: ios
+  port: 22
+SWUB01HP1:
+  hostname: 10.108.95.17
+  platform: ios
+  port: 22
+SWUB01HP2:
+  hostname: 10.108.95.18
+  platform: ios
+  port: 22
+SWUB01HP3:
+  hostname: 10.108.95.36
+  platform: ios
+  port: 22
+SWUB02HP3:
+  hostname: 10.108.95.26
+  platform: ios
+  port: 22
+SWUB02HP4:
+  hostname: 10.108.95.40
+  platform: ios
+  port: 22
+SWUB03HP1:
+  hostname: 10.108.95.29
+  platform: ios
+  port: 22
+SWUB06021:
+  hostname: 10.108.95.13
+  platform: ios
+  port: 22
+SWUB06022:
+  hostname: 10.108.95.27
+  platform: ios
+  port: 22
+SWUB06023:
+  hostname: 10.108.95.34
+  platform: ios
+  port: 22
+SWUB07TP1:
+  hostname: 10.108.95.14
+  platform: ios
+  port: 22
+SWUB07TP2:
+  hostname: 10.108.95.28
+  platform: ios
+  port: 22
+SWUB07TP3:
+  hostname: 10.108.95.33
+  platform: ios
+  port: 22
+SWUB23011:
+  hostname: 10.108.95.11
+  platform: ios
+  port: 22
+SWUB23012:
+  hostname: 10.108.95.37
+  platform: ios
+  port: 22
+SWUB42011:
+  hostname: 10.108.95.24
+  platform: ios
+  port: 22
+SWUB42012:
+  hostname: 10.108.95.32
+  platform: ios
+  port: 22
+SWUB52011:
+  hostname: 10.108.95.25
+  platform: ios
+  port: 22
+SWUB52012:
+  hostname: 10.108.95.31
+  platform: ios
+  port: 22
+SWUB52HP1:
+  hostname: 10.108.95.22
+  platform: ios
+  port: 22
+SWUB52HP2:
+  hostname: 10.108.95.191
+  platform: ios
+  port: 22
+SWUB62011:
+  hostname: 10.108.95.12
+  platform: ios
+  port: 22
+SWUB62HP1:
+  hostname: 10.108.95.23
+  platform: ios
+  port: 22
+SWUB62HP2:
+  hostname: 10.108.95.39
+  platform: ios
+  port: 22
+SWUB70011:
+  hostname: 10.108.95.16
+  platform: ios
+  port: 22
+SWUB70012:
+  hostname: 10.108.95.38
+  platform: ios
+  port: 22
+SWUB9541:
+  hostname: 10.108.95.41
+  platform: ios
+  port: 22
+SWUBRESERVE:
+  hostname: 10.108.95.15
+  platform: ios
+  port: 22
+SWUBRESERVE2:
+  hostname: 10.108.95.10
+  platform: ios
+  port: 22

@@ -1,8 +1,8 @@
 Logs/
 config/
-Inventory/
-IdentyGroups/
 config.yaml
 ssh_config
 ssh_config backup
 ssh_config
+ISE_API/.env
+

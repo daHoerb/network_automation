@@ -1,0 +1,240 @@
+SWULEGVH11:
+  hostname: 10.208.236.31
+  platform: ios
+  port: 22
+SWULEGVN11:
+  hostname: 10.208.236.33
+  platform: ios
+  port: 22
+SWULEGVN12:
+  hostname: 10.208.236.34
+  platform: ios
+  port: 22
+SWULEGVN13:
+  hostname: 10.208.236.35
+  platform: ios
+  port: 22
+SWULEGVN14:
+  hostname: 10.208.236.36
+  platform: ios
+  port: 22
+SWULEGVN15:
+  hostname: 10.208.236.37
+  platform: ios
+  port: 22
+SWULEGVN16:
+  hostname: 10.208.236.51
+  platform: ios
+  port: 22
+SWULEGVN1PM:
+  hostname: 10.208.236.70
+  platform: ios
+  port: 22
+SWULEGVN21:
+  hostname: 10.208.236.38
+  platform: ios
+  port: 22
+SWULEGVN22:
+  hostname: 10.208.236.39
+  platform: ios
+  port: 22
+SWULEGVN23:
+  hostname: 10.208.236.40
+  platform: ios
+  port: 22
+SWULEGVN24:
+  hostname: 10.208.236.41
+  platform: ios
+  port: 22
+SWULEGVN31:
+  hostname: 10.208.236.42
+  platform: ios
+  port: 22
+SWULEGVN32:
+  hostname: 10.208.236.43
+  platform: ios
+  port: 22
+SWULEGVN33:
+  hostname: 10.208.236.44
+  platform: ios
+  port: 22
+SWULEGVN34:
+  hostname: 10.208.236.45
+  platform: ios
+  port: 22
+SWULEGVN35:
+  hostname: 10.208.236.46
+  platform: ios
+  port: 22
+SWULEGVN36:
+  hostname: 10.208.236.73
+  platform: ios
+  port: 22
+SWULEGVN41:
+  hostname: 10.208.236.47
+  platform: ios
+  port: 22
+SWULEGVN42:
+  hostname: 10.208.236.48
+  platform: ios
+  port: 22
+SWULEGVN43:
+  hostname: 10.208.236.49
+  platform: ios
+  port: 22
+SWULEGVN44:
+  hostname: 10.208.236.50
+  platform: ios
+  port: 22
+SWULEGVN51:
+  hostname: 10.208.236.52
+  platform: ios
+  port: 22
+SWULEGVN52:
+  hostname: 10.208.236.53
+  platform: ios
+  port: 22
+SWULEGVN53:
+  hostname: 10.208.236.54
+  platform: ios
+  port: 22
+SWULOG1VH11:
+  hostname: 10.208.236.20
+  platform: ios
+  port: 22
+SWULOG1VH12:
+  hostname: 10.208.236.21
+  platform: ios
+  port: 22
+SWULOG1VH13:
+  hostname: 10.208.236.22
+  platform: ios
+  port: 22
+SWULOG1VN11:
+  hostname: 10.208.236.27
+  platform: ios
+  port: 22
+SWULOG1VN12:
+  hostname: 10.208.236.28
+  platform: ios
+  port: 22
+SWULOG1VN13:
+  hostname: 10.208.236.29
+  platform: ios
+  port: 22
+SWULOG1VN14:
+  hostname: 10.208.236.30
+  platform: ios
+  port: 22
+SWULOG1VN21:
+  hostname: 10.208.236.25
+  platform: ios
+  port: 22
+SWULOG1VN22:
+  hostname: 10.208.236.26
+  platform: ios
+  port: 22
+SWULOG1VN31:
+  hostname: 10.208.236.23
+  platform: ios
+  port: 22
+SWULOG1VN32:
+  hostname: 10.208.236.24
+  platform: ios
+  port: 22
+SWULOG1VN33:
+  hostname: 10.208.236.74
+  platform: ios
+  port: 22
+SWULOG2VH11:
+  hostname: 10.208.236.18
+  platform: ios
+  port: 22
+SWULOG2VH12:
+  hostname: 10.208.236.19
+  platform: ios
+  port: 22
+SWULOG3VH11:
+  hostname: 10.208.236.16
+  platform: ios
+  port: 22
+SWULOG3VH12:
+  hostname: 10.208.236.17
+  platform: ios
+  port: 22
+SWULOG4VH11:
+  hostname: 10.208.236.14
+  platform: ios
+  port: 22
+SWULOG4VH12:
+  hostname: 10.208.236.15
+  platform: ios
+  port: 22
+SWULOG5VH11:
+  hostname: 10.208.236.12
+  platform: ios
+  port: 22
+SWULOG5VH12:
+  hostname: 10.208.236.13
+  platform: ios
+  port: 22
+SWULOG6VH11:
+  hostname: 10.208.236.10
+  platform: ios
+  port: 22
+SWULOG6VH12:
+  hostname: 10.208.236.11
+  platform: ios
+  port: 22
+SWULUG1VH11:
+  hostname: 10.208.236.55
+  platform: ios
+  port: 22
+SWULUG1VH12:
+  hostname: 10.208.236.56
+  platform: ios
+  port: 22
+SWULUG1VH13:
+  hostname: 10.208.236.57
+  platform: ios
+  port: 22
+SWULUG1VN11:
+  hostname: 10.208.236.58
+  platform: ios
+  port: 22
+SWULUG1VN21:
+  hostname: 10.208.236.59
+  platform: ios
+  port: 22
+SWULUG1VN22:
+  hostname: 10.208.236.60
+  platform: ios
+  port: 22
+SWULUG1VN23:
+  hostname: 10.208.236.32
+  platform: ios
+  port: 22
+SWULUG1VZ21:
+  hostname: 10.208.236.61
+  platform: ios
+  port: 22
+SWULUG1VZ22:
+  hostname: 10.208.236.62
+  platform: ios
+  port: 22
+SWULUG1VZ32:
+  hostname: 10.208.236.67
+  platform: ios
+  port: 22
+SWULUG2VN11:
+  hostname: 10.208.236.66
+  platform: ios
+  port: 22
+SWULUG2VN12:
+  hostname: 10.208.236.69
+  platform: ios
+  port: 22
+SWULWHVH11:
+  hostname: 10.208.236.63
+  platform: ios
+  port: 22

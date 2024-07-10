@@ -1,0 +1,8 @@
+SWAS0001:
+  hostname: 10.108.63.1
+  platform: ios
+  port: 22
+SWAS0002:
+  hostname: 10.108.63.2
+  platform: ios
+  port: 22

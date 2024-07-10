@@ -1,0 +1,72 @@
+SWLG0001:
+  hostname: 10.108.129.3
+  platform: ios
+  port: 22
+SWLG01LIFT1:
+  hostname: 10.108.129.66
+  platform: ios
+  port: 22
+SWLG01LIFT2:
+  hostname: 10.108.129.73
+  platform: ios
+  port: 22
+SWLG01V271:
+  hostname: 10.108.129.67
+  platform: ios
+  port: 22
+SWLG02V131:
+  hostname: 10.108.129.68
+  platform: ios
+  port: 22
+SWLG02V291:
+  hostname: 10.108.129.69
+  platform: ios
+  port: 22
+SWLG03V121:
+  hostname: 10.108.129.71
+  platform: ios
+  port: 22
+SWLG03V8A1:
+  hostname: 10.108.129.70
+  platform: ios
+  port: 22
+SWLGEGV351:
+  hostname: 10.108.129.61
+  platform: ios
+  port: 22
+SWLGEGV352:
+  hostname: 10.108.129.62
+  platform: ios
+  port: 22
+SWLGEGV353:
+  hostname: 10.108.129.72
+  platform: ios
+  port: 22
+SWLGEGV621:
+  hostname: 10.108.129.63
+  platform: ios
+  port: 22
+SWLGEGV622:
+  hostname: 10.108.129.161
+  platform: ios
+  port: 22
+SWLGEGV623:
+  hostname: 10.108.129.162
+  platform: ios
+  port: 22
+SWLGEGV9A1:
+  hostname: 10.108.129.64
+  platform: ios
+  port: 22
+SWLGEGV9A2:
+  hostname: 10.108.129.65
+  platform: ios
+  port: 22
+SWLGEGV9A3:
+  hostname: 10.108.129.75
+  platform: ios
+  port: 22
+SWLGEGVZE1:
+  hostname: 10.108.129.74
+  platform: ios
+  port: 22
