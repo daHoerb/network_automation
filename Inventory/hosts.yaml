@@ -1,9 +1,0 @@
-172.20.80.4:
-    hostname: 172.20.80.4
-    port: 22
-    platform: ios
-
-172.20.80.5:
-    hostname: 172.20.80.5
-    port: 22
-    platform: ios
